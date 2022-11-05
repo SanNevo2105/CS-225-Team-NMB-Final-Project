@@ -1,1 +1,35 @@
+## Leading Question 
+
+What are the most viable teammates for a Pokemon in a specific single-battle format in Smogon’s Pokemon Showdown battle simulator? A team of Pokemon consists of 6 different Pokemon, all from a subset of Pokemons that are allowed in that specific format. Each Pokemon in the team will complement one another differently, making some Pokemon more viable to be used with certain other Pokemon than the others. Also, each Pokemon will have a varying degree of viability in the format, whereas some Pokemon will perform better and more consistently than others. Using 2 dataset from the official Smogon statistic website, the usage and teammates percentage data-set from high-ranking players, we can create a naive teammates recommendation for some chosen Pokemon and form a 6 Pokemon team based solely on the viability of each Pokemon, both individually and in combinations as represented by individual and teammates usage percentages. BFS will be used to search for the chosen Pokemon within the graph, while Dijkstra’s will be used to find the shortest path between the chosen Pokemon, and Strongly Connected Components algorithm will be used to find the group of Pokemon with strongest connections total involving the chosen Pokemons and the ones on the path between them.
+
+## Dataset Acquisition and processing
+
+    ## Data Format
+    The program will use 2 data sets: Individual Pokemon usage percentage of the competitive format and the teammates percentages from the moveset data set, both are in text format and are from the official smogon website. For example, gen8OU format will be https://www.smogon.com/stats/2022-10/gen8ou-1825.txt for individual usage percentage and https://www.smogon.com/stats/2022-10/moveset/gen8ou-1825.txt for teammates percentage. The text files are not in any directly-parsable format like csv or json, which means a parser will have to be written to parse them. We will use only a portion of the data from both sets, namely only the usage percentage and teammates percentage of each Pokemon. The teammates percentage data set will have 236 entries while individual usage percentage will have 699 entries, which means we will use 236 entries in total using only Pokemons included in the teammates data set.
+
+    ## Data Correction
+    The 2 text files containing the individual usage and teammates percentage data will be parsed using string functions into a structure representing the Pokemon’s name, its individual usage data, and a list of its potential teammates and their percentage. Asserts can be used to ensure that a total of 236 entries are generated with none of them being empty to ensure that there are no missing entries in any of the fields (Pokemon name, usage percentage, teammates and teammate percentages). Each entry can be printed out for us to see whether it makes sense or not. Each percentage can be checked using assert to ensure that they do not exceed 100% or is negative.
+
+    ## Data Storage
+    One possible data format will be STL namespace’s map<string, pair<double, map<string, double>>>, where the first outer map will represent the Pokemon’s name and the pair inside represent it’s percentage usage and a map of its potential teammates and teammates percentage, represented as string and double respectively. The second map containing teammate percentage inside the pair inside the first map will act as the edges connecting each Pokemon entries. Thus each vertex will be each Pokemon and each weighted and directed edge will be its teammate percentage to other Pokemons. Since map is a dictionary, it uses an associative array data structure that has O(n) space complexity, which means the total storage cost will be directly proportional to the amount of entries it has.
+
+
+## Algorithm 
+-The algorithms that we are planning to use and implement are the Strongest connected component algorithm(also known as the Tarjan’s algorithm), BFS, and Dijkstra’s Algorithm. These are the algorithms that we want to use because they all help us find the shortest path and how strong is the connection between the Pokemons. The inputs to the BFS algorithm would be the current node(or the pokemon that we’re trying to find a team for). The input to the SCC algorithm would be one graph, which consists of the points(or nodes). The last algorithm, Dijkstra’s Algorithm would have the inputs of one graph and one node in the graph. Since our dataset is already a graph, there isn’t much that we need to do in the case of converting to useful parameters. 
+
+The output of the BFS algorithm would be a node that is in a strong connection with the current node(pokemon). The result of this can be stored in a node pointer. The output of the SCC algorithm would be groups of connected nodes. This can be represented as a vector of nodes. The output of the Dijkstra’s Algorithm would be a vector of nodes, which is used to store all the nodes that it passes as it travels to the node that we’re looking for.
+
+Finally, the Big O for BFS would be O(n), similarly with SCC algorithm, it’s also O(n), and finally Dijkstra’s Algorithm, it would also most be O(nlogn + mlogn).
+
+
+## Timeline
+Nov 4th - Nov11: finished writing the parser and planned the overall structure of the program, including deciding how to decide which Pokemon to pick based on the two percentages.
+
+Nov 11th - Nov 18th: finish writing the BFS for single pokemon teammate picking and tested that it works
+
+Nov 18th - Nov 24th: finish writing the Dijkstra algorithm for single pokemon teammate picking and tested that it works
+
+Nov 24th - Dec 1st: finish writing the landmark path algorithm and tested it
+
+Dec 1st - Dec 8th: debug and prepare the program for submission
 
