@@ -13,7 +13,7 @@ class TeamMaker{
     std::vector<std::vector<double>> floydWarshall();
     std::vector<std::string> generateTeam(const std::string& pokemons);
     
-  Private:
+  private:
     std::vector<double> usage_;
     std::vector<std::map<unsigned, double>> teammates_;
     std::map<std::string, unsigned> index_;
