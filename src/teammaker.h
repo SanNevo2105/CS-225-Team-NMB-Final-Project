@@ -5,8 +5,8 @@
 
 class TeamMaker{
   public:
-    TeamMaker(const std::string& teamFile, const std::string& indivFile);
-    std::map<std::string, std::map<std::string, double>> teammateParser(const std::string& fileName);
+    TeamMaker(const std::string& teamFile, const std::string& usageFile);
+    std::map<std::string, std::map<std::string, double>> teammatesParser(const std::string& fileName);
     std::map<std::string, double> usageParser(const std::string& fileName);
     ~TeamMaker();
     bool dfs(const std::string start, const std::string key);
@@ -14,5 +14,7 @@ class TeamMaker{
     std::vector<std::string> generateTeam(const std::string& pokemons);
     
   Private:
-    
+    std::vector<double> usage_;
+    std::vector<std::map<unsigned, double>> teammates_;
+    std::map<std::string, unsigned> index_;
 };
