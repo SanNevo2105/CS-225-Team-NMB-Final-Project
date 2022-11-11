@@ -13,7 +13,6 @@ class TeamMaker{
     std::vector<std::vector<double>> floydWarshall();
     std::vector<std::string> generateTeam(const std::string& pokemons);
     
-    
-  
   Private:
+    
 };
