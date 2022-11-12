@@ -17,14 +17,21 @@ class TeamMaker{
     ~TeamMaker();
     //dfs for finding whether a pokemon is connected to another one or not, if not, then the team sucks
     bool dfs(const std::string start, const std::string key);
-    //floyd warshall for finding the weight between each pokemon, with 0 representing no connection
+    //floyd warshall for finding the weight between each pokemon
     std::vector<std::vector<double>> floydWarshall();
+    //the function for generating the team, taking in a string of pokemon names separated by comma and space
+    //use helper function pokemonsToVector to turn the string of pokemons into a vector of pokemons
     std::vector<std::string> generateTeam(const std::string& pokemons);
     
   private:
+    //map mapping pokemon with its index
     std::map<std::string, unsigned> index_;
+    //vector of its usage percentage, with index representing a pokemon
     std::vector<double> usage_;
+    //vector representing map of index of pokemon and its teammates percentage
     std::vector<std::map<unsigned, double>> teammates_;
-    
+    //vector representing the viability ceiling of each pokemon
     std::vector<double> viability_;
+    //helper function for generateTeam for turning a string of pokemon names to a vector of pokemons
+    std::vector<string> pokemonsToVector(const std::string& pokemons);
 };
