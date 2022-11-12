@@ -6,7 +6,7 @@ std::vector<std::tuple<std::string, std::map<std::string, double>, double>> Team
 
 std::map<std::string, double> TeamMaker::usageParser(const std::string& fileName){}
 
-TeamMaker::~TeamMaker();
+TeamMaker::~TeamMaker(){}
 
 bool TeamMaker::dfs(const std::string start, const std::string key){}
 
