@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iterator>
 #include <stdexcept>
+#include <iostream>
 
 TeamMaker::TeamMaker(const std::string& teamFile, const std::string& usageFile){}
 
@@ -14,7 +15,10 @@ std::vector<std::tuple<std::string, std::map<std::string, double>, double>> Team
         std::string name;
         double viabilityCeiling = 0;
         while (getline(textFile, line)) {
-            if (line[0] == '+') {
+            //std::cout << line.size() << std::endl;
+            //std::cout << line[1] << std::endl;
+            if (line[1] == '+') {
+                //std::cout << "plus count: " << plusCount << std::endl;
                 plusCount++;
                 //once found the name line
                 if (plusCount%9 == 1) {
@@ -23,11 +27,14 @@ std::vector<std::tuple<std::string, std::map<std::string, double>, double>> Team
                     while (line[i] == '|' || line[i] == ' ') {
                         i++;
                     }
-                    unsigned j = name.size();
-                    while (name[j-1] == ' ') {
+                    //std::cout << "yay" << std::endl;
+                    unsigned j = line.size();
+                    while (line[j-1] == ' ' || line[j-1] == '|') {
                         j--;
                     }
+                    //std::cout << "yatta" << std::endl;
                     name = line.substr(i, j-i);
+                    //std::cout<< name<<std::endl;
                 }
                 //once found the viability ceiling
                 if (plusCount%9 == 2) {
@@ -42,13 +49,16 @@ std::vector<std::tuple<std::string, std::map<std::string, double>, double>> Team
                     while (line[i-1] != ' ') {
                         i--;
                     }
+                    //std::cout << line.substr(i, j-i) << std::endl;
                     viabilityCeiling = std::stod(line.substr(i, j-i)) * 0.01;
+                    //std::cout << viabilityCeiling <<std::endl;
                 }
                 //once found teammates
                 if (plusCount%9 == 7) {
                     getline(textFile, line);
+                    getline(textFile, line);
                     std::map<std::string, double> teammates;
-                    while (line[0] != '+') {
+                    while (line[1] != '+') {
                         double percent = 0;
                         unsigned j = line.size();
                         while (line[j-1] == '|' || line[j-1] == '%' || line[j-1] == ' ') {
@@ -58,9 +68,11 @@ std::vector<std::tuple<std::string, std::map<std::string, double>, double>> Team
                         while(line[i-1] != ' ') {
                             i--;
                         }
+                        //std::cout << line.substr(i, j-i)<<std::endl;
                         percent = std::stod(line.substr(i, j-i)) * 0.01;
                         i--;
                         std::string pokemon = line.substr(3, i-3);
+                        //std::cout << "  "<<pokemon << std::endl;
                         teammates[pokemon] = percent;
                         getline(textFile, line);
                     }
