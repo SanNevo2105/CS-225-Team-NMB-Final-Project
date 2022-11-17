@@ -20,7 +20,7 @@ class TeamMaker{
     ~TeamMaker();
   
     //dfs for finding whether a pokemon is connected to another one or not, if not, then the team sucks
-    bool dfs(const std::string start, const std::string key);
+    bool dfs(unsigned start, unsigned key);
   
     //floyd warshall for finding the weight between each pokemon
     std::vector<std::vector<double>> floydWarshall();
