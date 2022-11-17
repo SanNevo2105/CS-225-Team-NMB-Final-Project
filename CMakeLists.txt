@@ -99,22 +99,32 @@ set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${assignment_clea
 # Add Catch2.
 # Note: Ubuntu 20.04 LTS does not have Catch2 on apt
 # See: https://github.com/catchorg/Catch2/issues/1383
-if(NOT DEFINED EWS)
-    find_package(Catch2 REQUIRED)
-else()
-    include(FetchContent)
+# if(NOT DEFINED EWS)
+#     find_package(Catch2 REQUIRED)
+# else()
+#     include(FetchContent)
 
-    FetchContent_Declare(
-        Catch2
-        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG        v3.0.0-preview3
-    )
+#     FetchContent_Declare(
+#         Catch2
+#         GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+#         GIT_TAG        v3.0.0-preview3
+#     )
 
-    FetchContent_MakeAvailable(Catch2)
+#     FetchContent_MakeAvailable(Catch2)
 
-    list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
-endif()
+#     list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
+# endif()
+include(FetchContent)
 
+FetchContent_Declare(
+    Catch2
+    GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+    GIT_TAG        v3.0.0-preview3
+)
+
+FetchContent_MakeAvailable(Catch2)
+
+list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 # Path definitions.
 set(src_dir ${CMAKE_SOURCE_DIR}/src)
 set(tests_dir ${CMAKE_SOURCE_DIR}/tests)

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.cpp
+teammaker.h
+/workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.h
+fstream
+-
+iterator
+-
+
+/workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.h
+string
+-
+vector
+-
+map
+-
+tuple
+-
+
