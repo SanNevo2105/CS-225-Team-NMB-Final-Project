@@ -111,6 +111,426 @@ depend:
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/NightlyTest.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/NightlyTest.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/NightlyTest.dir/rule
+
+# Convenience name for target.
+NightlyTest: _deps/catch2-build/CMakeFiles/NightlyTest.dir/rule
+
+.PHONY : NightlyTest
+
+# fast build rule for target.
+NightlyTest/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/NightlyTest.dir/build.make _deps/catch2-build/CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ContinuousConfigure.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ContinuousConfigure.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ContinuousConfigure.dir/rule
+
+# Convenience name for target.
+ContinuousConfigure: _deps/catch2-build/CMakeFiles/ContinuousConfigure.dir/rule
+
+.PHONY : ContinuousConfigure
+
+# fast build rule for target.
+ContinuousConfigure/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ContinuousConfigure.dir/build.make _deps/catch2-build/CMakeFiles/ContinuousConfigure.dir/build
+.PHONY : ContinuousConfigure/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ContinuousBuild.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ContinuousBuild.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ContinuousBuild.dir/rule
+
+# Convenience name for target.
+ContinuousBuild: _deps/catch2-build/CMakeFiles/ContinuousBuild.dir/rule
+
+.PHONY : ContinuousBuild
+
+# fast build rule for target.
+ContinuousBuild/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ContinuousBuild.dir/build.make _deps/catch2-build/CMakeFiles/ContinuousBuild.dir/build
+.PHONY : ContinuousBuild/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/NightlyConfigure.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/NightlyConfigure.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/NightlyConfigure.dir/rule
+
+# Convenience name for target.
+NightlyConfigure: _deps/catch2-build/CMakeFiles/NightlyConfigure.dir/rule
+
+.PHONY : NightlyConfigure
+
+# fast build rule for target.
+NightlyConfigure/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/NightlyConfigure.dir/build.make _deps/catch2-build/CMakeFiles/NightlyConfigure.dir/build
+.PHONY : NightlyConfigure/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/NightlyMemoryCheck.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/NightlyMemoryCheck.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/NightlyMemoryCheck.dir/rule
+
+# Convenience name for target.
+NightlyMemoryCheck: _deps/catch2-build/CMakeFiles/NightlyMemoryCheck.dir/rule
+
+.PHONY : NightlyMemoryCheck
+
+# fast build rule for target.
+NightlyMemoryCheck/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/NightlyMemoryCheck.dir/build.make _deps/catch2-build/CMakeFiles/NightlyMemoryCheck.dir/build
+.PHONY : NightlyMemoryCheck/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ExperimentalTest.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ExperimentalTest.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ExperimentalTest.dir/rule
+
+# Convenience name for target.
+ExperimentalTest: _deps/catch2-build/CMakeFiles/ExperimentalTest.dir/rule
+
+.PHONY : ExperimentalTest
+
+# fast build rule for target.
+ExperimentalTest/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ExperimentalTest.dir/build.make _deps/catch2-build/CMakeFiles/ExperimentalTest.dir/build
+.PHONY : ExperimentalTest/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ContinuousUpdate.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ContinuousUpdate.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ContinuousUpdate.dir/rule
+
+# Convenience name for target.
+ContinuousUpdate: _deps/catch2-build/CMakeFiles/ContinuousUpdate.dir/rule
+
+.PHONY : ContinuousUpdate
+
+# fast build rule for target.
+ContinuousUpdate/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ContinuousUpdate.dir/build.make _deps/catch2-build/CMakeFiles/ContinuousUpdate.dir/build
+.PHONY : ContinuousUpdate/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/NightlyUpdate.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/NightlyUpdate.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/NightlyUpdate.dir/rule
+
+# Convenience name for target.
+NightlyUpdate: _deps/catch2-build/CMakeFiles/NightlyUpdate.dir/rule
+
+.PHONY : NightlyUpdate
+
+# fast build rule for target.
+NightlyUpdate/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/NightlyUpdate.dir/build.make _deps/catch2-build/CMakeFiles/NightlyUpdate.dir/build
+.PHONY : NightlyUpdate/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ExperimentalMemCheck.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ExperimentalMemCheck.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ExperimentalMemCheck.dir/rule
+
+# Convenience name for target.
+ExperimentalMemCheck: _deps/catch2-build/CMakeFiles/ExperimentalMemCheck.dir/rule
+
+.PHONY : ExperimentalMemCheck
+
+# fast build rule for target.
+ExperimentalMemCheck/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ExperimentalMemCheck.dir/build.make _deps/catch2-build/CMakeFiles/ExperimentalMemCheck.dir/build
+.PHONY : ExperimentalMemCheck/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ExperimentalSubmit.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ExperimentalSubmit.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ExperimentalSubmit.dir/rule
+
+# Convenience name for target.
+ExperimentalSubmit: _deps/catch2-build/CMakeFiles/ExperimentalSubmit.dir/rule
+
+.PHONY : ExperimentalSubmit
+
+# fast build rule for target.
+ExperimentalSubmit/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ExperimentalSubmit.dir/build.make _deps/catch2-build/CMakeFiles/ExperimentalSubmit.dir/build
+.PHONY : ExperimentalSubmit/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/Experimental.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/Experimental.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/Experimental.dir/rule
+
+# Convenience name for target.
+Experimental: _deps/catch2-build/CMakeFiles/Experimental.dir/rule
+
+.PHONY : Experimental
+
+# fast build rule for target.
+Experimental/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/Experimental.dir/build.make _deps/catch2-build/CMakeFiles/Experimental.dir/build
+.PHONY : Experimental/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ContinuousCoverage.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ContinuousCoverage.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ContinuousCoverage.dir/rule
+
+# Convenience name for target.
+ContinuousCoverage: _deps/catch2-build/CMakeFiles/ContinuousCoverage.dir/rule
+
+.PHONY : ContinuousCoverage
+
+# fast build rule for target.
+ContinuousCoverage/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ContinuousCoverage.dir/build.make _deps/catch2-build/CMakeFiles/ContinuousCoverage.dir/build
+.PHONY : ContinuousCoverage/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ExperimentalConfigure.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ExperimentalConfigure.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ExperimentalConfigure.dir/rule
+
+# Convenience name for target.
+ExperimentalConfigure: _deps/catch2-build/CMakeFiles/ExperimentalConfigure.dir/rule
+
+.PHONY : ExperimentalConfigure
+
+# fast build rule for target.
+ExperimentalConfigure/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ExperimentalConfigure.dir/build.make _deps/catch2-build/CMakeFiles/ExperimentalConfigure.dir/build
+.PHONY : ExperimentalConfigure/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/Continuous.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/Continuous.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/Continuous.dir/rule
+
+# Convenience name for target.
+Continuous: _deps/catch2-build/CMakeFiles/Continuous.dir/rule
+
+.PHONY : Continuous
+
+# fast build rule for target.
+Continuous/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/Continuous.dir/build.make _deps/catch2-build/CMakeFiles/Continuous.dir/build
+.PHONY : Continuous/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/Nightly.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/Nightly.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/Nightly.dir/rule
+
+# Convenience name for target.
+Nightly: _deps/catch2-build/CMakeFiles/Nightly.dir/rule
+
+.PHONY : Nightly
+
+# fast build rule for target.
+Nightly/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/Nightly.dir/build.make _deps/catch2-build/CMakeFiles/Nightly.dir/build
+.PHONY : Nightly/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/NightlySubmit.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/NightlySubmit.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/NightlySubmit.dir/rule
+
+# Convenience name for target.
+NightlySubmit: _deps/catch2-build/CMakeFiles/NightlySubmit.dir/rule
+
+.PHONY : NightlySubmit
+
+# fast build rule for target.
+NightlySubmit/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/NightlySubmit.dir/build.make _deps/catch2-build/CMakeFiles/NightlySubmit.dir/build
+.PHONY : NightlySubmit/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/NightlyStart.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/NightlyStart.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/NightlyStart.dir/rule
+
+# Convenience name for target.
+NightlyStart: _deps/catch2-build/CMakeFiles/NightlyStart.dir/rule
+
+.PHONY : NightlyStart
+
+# fast build rule for target.
+NightlyStart/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/NightlyStart.dir/build.make _deps/catch2-build/CMakeFiles/NightlyStart.dir/build
+.PHONY : NightlyStart/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ExperimentalCoverage.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ExperimentalCoverage.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ExperimentalCoverage.dir/rule
+
+# Convenience name for target.
+ExperimentalCoverage: _deps/catch2-build/CMakeFiles/ExperimentalCoverage.dir/rule
+
+.PHONY : ExperimentalCoverage
+
+# fast build rule for target.
+ExperimentalCoverage/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ExperimentalCoverage.dir/build.make _deps/catch2-build/CMakeFiles/ExperimentalCoverage.dir/build
+.PHONY : ExperimentalCoverage/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/NightlyCoverage.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/NightlyCoverage.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/NightlyCoverage.dir/rule
+
+# Convenience name for target.
+NightlyCoverage: _deps/catch2-build/CMakeFiles/NightlyCoverage.dir/rule
+
+.PHONY : NightlyCoverage
+
+# fast build rule for target.
+NightlyCoverage/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/NightlyCoverage.dir/build.make _deps/catch2-build/CMakeFiles/NightlyCoverage.dir/build
+.PHONY : NightlyCoverage/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ExperimentalStart.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ExperimentalStart.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ExperimentalStart.dir/rule
+
+# Convenience name for target.
+ExperimentalStart: _deps/catch2-build/CMakeFiles/ExperimentalStart.dir/rule
+
+.PHONY : ExperimentalStart
+
+# fast build rule for target.
+ExperimentalStart/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ExperimentalStart.dir/build.make _deps/catch2-build/CMakeFiles/ExperimentalStart.dir/build
+.PHONY : ExperimentalStart/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/NightlyBuild.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/NightlyBuild.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/NightlyBuild.dir/rule
+
+# Convenience name for target.
+NightlyBuild: _deps/catch2-build/CMakeFiles/NightlyBuild.dir/rule
+
+.PHONY : NightlyBuild
+
+# fast build rule for target.
+NightlyBuild/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/NightlyBuild.dir/build.make _deps/catch2-build/CMakeFiles/NightlyBuild.dir/build
+.PHONY : NightlyBuild/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ExperimentalBuild.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ExperimentalBuild.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ExperimentalBuild.dir/rule
+
+# Convenience name for target.
+ExperimentalBuild: _deps/catch2-build/CMakeFiles/ExperimentalBuild.dir/rule
+
+.PHONY : ExperimentalBuild
+
+# fast build rule for target.
+ExperimentalBuild/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ExperimentalBuild.dir/build.make _deps/catch2-build/CMakeFiles/ExperimentalBuild.dir/build
+.PHONY : ExperimentalBuild/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ExperimentalUpdate.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ExperimentalUpdate.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ExperimentalUpdate.dir/rule
+
+# Convenience name for target.
+ExperimentalUpdate: _deps/catch2-build/CMakeFiles/ExperimentalUpdate.dir/rule
+
+.PHONY : ExperimentalUpdate
+
+# fast build rule for target.
+ExperimentalUpdate/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ExperimentalUpdate.dir/build.make _deps/catch2-build/CMakeFiles/ExperimentalUpdate.dir/build
+.PHONY : ExperimentalUpdate/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ContinuousStart.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ContinuousStart.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ContinuousStart.dir/rule
+
+# Convenience name for target.
+ContinuousStart: _deps/catch2-build/CMakeFiles/ContinuousStart.dir/rule
+
+.PHONY : ContinuousStart
+
+# fast build rule for target.
+ContinuousStart/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ContinuousStart.dir/build.make _deps/catch2-build/CMakeFiles/ContinuousStart.dir/build
+.PHONY : ContinuousStart/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ContinuousMemCheck.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ContinuousMemCheck.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ContinuousMemCheck.dir/rule
+
+# Convenience name for target.
+ContinuousMemCheck: _deps/catch2-build/CMakeFiles/ContinuousMemCheck.dir/rule
+
+.PHONY : ContinuousMemCheck
+
+# fast build rule for target.
+ContinuousMemCheck/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ContinuousMemCheck.dir/build.make _deps/catch2-build/CMakeFiles/ContinuousMemCheck.dir/build
+.PHONY : ContinuousMemCheck/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ContinuousTest.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ContinuousTest.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ContinuousTest.dir/rule
+
+# Convenience name for target.
+ContinuousTest: _deps/catch2-build/CMakeFiles/ContinuousTest.dir/rule
+
+.PHONY : ContinuousTest
+
+# fast build rule for target.
+ContinuousTest/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ContinuousTest.dir/build.make _deps/catch2-build/CMakeFiles/ContinuousTest.dir/build
+.PHONY : ContinuousTest/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/ContinuousSubmit.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/ContinuousSubmit.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/ContinuousSubmit.dir/rule
+
+# Convenience name for target.
+ContinuousSubmit: _deps/catch2-build/CMakeFiles/ContinuousSubmit.dir/rule
+
+.PHONY : ContinuousSubmit
+
+# fast build rule for target.
+ContinuousSubmit/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/ContinuousSubmit.dir/build.make _deps/catch2-build/CMakeFiles/ContinuousSubmit.dir/build
+.PHONY : ContinuousSubmit/fast
+
+# Convenience name for target.
+_deps/catch2-build/CMakeFiles/NightlyMemCheck.dir/rule:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f CMakeFiles/Makefile2 _deps/catch2-build/CMakeFiles/NightlyMemCheck.dir/rule
+.PHONY : _deps/catch2-build/CMakeFiles/NightlyMemCheck.dir/rule
+
+# Convenience name for target.
+NightlyMemCheck: _deps/catch2-build/CMakeFiles/NightlyMemCheck.dir/rule
+
+.PHONY : NightlyMemCheck
+
+# fast build rule for target.
+NightlyMemCheck/fast:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f _deps/catch2-build/CMakeFiles/NightlyMemCheck.dir/build.make _deps/catch2-build/CMakeFiles/NightlyMemCheck.dir/build
+.PHONY : NightlyMemCheck/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -118,6 +538,34 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... NightlyTest"
+	@echo "... ContinuousConfigure"
+	@echo "... ContinuousBuild"
+	@echo "... NightlyConfigure"
+	@echo "... NightlyMemoryCheck"
+	@echo "... ExperimentalTest"
+	@echo "... ContinuousUpdate"
+	@echo "... NightlyUpdate"
+	@echo "... ExperimentalMemCheck"
+	@echo "... ExperimentalSubmit"
+	@echo "... Experimental"
+	@echo "... ContinuousCoverage"
+	@echo "... ExperimentalConfigure"
+	@echo "... Continuous"
+	@echo "... Nightly"
+	@echo "... NightlySubmit"
+	@echo "... NightlyStart"
+	@echo "... ExperimentalCoverage"
+	@echo "... NightlyCoverage"
+	@echo "... ExperimentalStart"
+	@echo "... NightlyBuild"
+	@echo "... ExperimentalBuild"
+	@echo "... ExperimentalUpdate"
+	@echo "... ContinuousStart"
+	@echo "... ContinuousMemCheck"
+	@echo "... ContinuousTest"
+	@echo "... ContinuousSubmit"
+	@echo "... NightlyMemCheck"
 	@echo "... edit_cache"
 .PHONY : help
 

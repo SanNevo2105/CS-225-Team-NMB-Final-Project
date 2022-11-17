@@ -1,0 +1,5 @@
+add_test( [==[All available test cases:]==] /workspaces/CS-225-Team-NMB-Final-Project/build/test [==[All available test cases:]==])
+set_tests_properties( [==[All available test cases:]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS-225-Team-NMB-Final-Project/build)
+add_test( [==[0 test cases]==] /workspaces/CS-225-Team-NMB-Final-Project/build/test [==[0 test cases]==])
+set_tests_properties( [==[0 test cases]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS-225-Team-NMB-Final-Project/build)
+set( test_TESTS [==[All available test cases:]==] [==[0 test cases]==])
