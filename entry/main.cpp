@@ -14,5 +14,14 @@ int main(){
             std::cout<< "   " << t.first << ": " << t.second <<std::endl;
         }
     }
+    
+    TeamMaker* team = new TeamMaker("die", "die");
+    std::map<std::string, double> individual = team->usageParser("/workspaces/CS-225-Team-NMB-Final-Project/dataset.csv");
+    for(auto entry:individual){
+        std::string name = std::get<0>(entry);
+        double vc = std::get<1>(entry);
+        std::cout<< name << " " << vc <<std::endl;
+    }
+    
     return 1;
 }
