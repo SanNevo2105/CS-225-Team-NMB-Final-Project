@@ -89,7 +89,46 @@ std::vector<std::tuple<std::string, std::map<std::string, double>, double>> Team
 }
 
 std::map<std::string, double> TeamMaker::usageParser(const std::string& fileName){
-    return std::map<std::string, double>();
+    std::string line;
+    std::ifstream myfile(fileName);
+    std::map<std::string, double> match;
+    int counter = 0; 
+    int end = 0;
+    int start = 0;
+    if(myfile){
+        while(getline(myfile, line)){
+            while(line[counter] != ' '){
+                counter ++;
+            }
+            counter ++;
+            start = counter;                   //find the name right after the space
+            while(line[counter] != ','){
+                counter ++;
+            }
+            int length = counter - start;                 //find the last letter of the name
+            std::string pokemon = line.substr(start, length);
+            
+            while(pokemon[pokemon.length()-1] == ' '){
+                pokemon.pop_back();
+            }
+            start = counter;              //get percentage
+            counter++;
+            while(line[counter] != ','){
+                counter++;
+            }
+            length = counter - start;
+            double usage = std::stod(line.substr(start + 1, length));
+            //std::cout<< pokemon <<" "<< usage << std::endl;
+            match[pokemon] = usage; 
+
+            counter = 0;
+            start = 0;
+            end = 0;
+        }
+        myfile.close();
+    }
+    else std::cout << "cannot open the file\n";
+    return match;
 }
 
 TeamMaker::~TeamMaker(){}
