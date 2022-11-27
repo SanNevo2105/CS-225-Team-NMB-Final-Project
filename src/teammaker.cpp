@@ -5,7 +5,48 @@
 #include <iostream>
 #include <stack>
 
-TeamMaker::TeamMaker(const std::string& teamFile, const std::string& usageFile){}
+TeamMaker::TeamMaker(const std::string& teamFile, const std::string& usageFile){std::vector<std::tuple<std::string, std::map<std::string, double>, double>> result = teammatesParser(teamFile);
+
+//string corresponds to the get<0> result.at(i);
+//unsinged is just from 0 to vector.size();
+for(unsigned int i = 0; i < result.size(); i++) {
+    // populate the index_
+    index_[std::get<0> (result[i])] =  i;
+}
+// getting the double from the map in result
+// goes through the result vector, then go to the tuples position, then go to the map and obtain the info
+
+std::vector<double> value_in_teammate;
+// get access to the tuple map 
+// populate the tuple map into a new map 
+// assign new key to the new map
+// push the new map into teammates_ private variable
+
+for(unsigned int i = 0; i < result.size();i++) {
+    // get access to the tuple and then the map
+    std::map<std::string, double> current_map;
+    current_map = std::get<1>(result[i]);
+    // loop through current map and insert the element into the new map
+    std::map<unsigned, double> new_map;
+  
+        // syntax problem 
+        for (auto entry: current_map) {
+            new_map[index_[entry.first]] = entry.second;
+        }
+       teammates_.push_back(new_map);
+    }
+// populating the viability 
+for(unsigned z = 0; z < result.size(); z++) {
+        viability_.push_back(std::get<2> (result.at(z)));
+    }
+
+// populating usage
+std::map<std::string, double> match = usageParser(usageFile);
+// iterates through the map, then push the value into private variable usage
+for (std::map<std::string, double>::iterator it=match.begin() ; it != match.end(); ++it ) {
+        usage_.push_back(it->second);
+    }
+}
 
 std::vector<std::tuple<std::string, std::map<std::string, double>, double>> TeamMaker::teammatesParser(const std::string& fileName){
     std::ifstream textFile(fileName);
@@ -89,7 +130,46 @@ std::vector<std::tuple<std::string, std::map<std::string, double>, double>> Team
 }
 
 std::map<std::string, double> TeamMaker::usageParser(const std::string& fileName){
-    return std::map<std::string, double>();
+    std::string line;
+    std::ifstream myfile(fileName);
+    std::map<std::string, double> match;
+    int counter = 0; 
+    int end = 0;
+    int start = 0;
+    if(myfile){
+        while(getline(myfile, line)){
+            while(line[counter] != ' '){
+                counter ++;
+            }
+            counter ++;
+            start = counter;                   //find the name right after the space
+            while(line[counter] != ','){
+                counter ++;
+            }
+            int length = counter - start;                 //find the last letter of the name
+            std::string pokemon = line.substr(start, length);
+            
+            while(pokemon[pokemon.length()-1] == ' '){
+                pokemon.pop_back();
+            }
+            start = counter;              //get percentage
+            counter++;
+            while(line[counter] != ','){
+                counter++;
+            }
+            length = counter - start;
+            double usage = std::stod(line.substr(start + 1, length));
+            //std::cout<< pokemon <<" "<< usage << std::endl;
+            match[pokemon] = usage; 
+
+            counter = 0;
+            start = 0;
+            end = 0;
+        }
+        myfile.close();
+    }
+    else std::cout << "cannot open the file\n";
+    return match;
 }
 
 TeamMaker::~TeamMaker(){}
