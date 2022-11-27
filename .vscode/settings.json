@@ -32,6 +32,7 @@
         "tuple": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "deque": "cpp"
     }
 }
