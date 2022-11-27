@@ -350,10 +350,10 @@ MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 P4COMMAND:FILEPATH=P4COMMAND-NOTFOUND
 
 //Name of the computer/site where compile is being run
-SITE:STRING=codespaces-0cbbd6
+SITE:STRING=codespaces-24a0ba
 
 //Name of the computer/site where compile is being run
-SITE_NAME:STRING=codespaces-0cbbd6
+SITE_NAME:STRING=codespaces-24a0ba
 
 //Path to the SLURM sbatch executable
 SLURM_SBATCH_COMMAND:FILEPATH=SLURM_SBATCH_COMMAND-NOTFOUND
