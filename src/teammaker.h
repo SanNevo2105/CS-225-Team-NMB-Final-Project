@@ -14,7 +14,7 @@ class TeamMaker{
     std::vector<std::tuple<std::string, std::map<std::string, double>, double>> teammatesParser(const std::string& fileName);
   
     //parser for usage data set, returns a map of Pokemon name and its usage percentage
-    std::map<std::string, double> usageParser(const std::string& fileName);
+    std::vector<double> usageParser(const std::string& fileName, unsigned size);
   
     //destructor
     ~TeamMaker();
