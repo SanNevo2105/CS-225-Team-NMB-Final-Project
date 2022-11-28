@@ -282,6 +282,7 @@ std::vector<std::string> TeamMaker::generateTeam(const std::string& pokemons){
     for (auto p:team) {
         available.erase(available.find(p));
     }
+    std::vector<double> multipliers = {3, 3, 1, 0.2, 0};
     while (team.size() < 6) {
         double maxWeight = 0;
         unsigned index = *available.begin();
@@ -291,7 +292,7 @@ std::vector<std::string> TeamMaker::generateTeam(const std::string& pokemons){
             //double weight = 0;
             for (unsigned i = 0; i < team.size(); i++) {
                 unsigned p = team[i];
-                weight += (weights_[p][a] * pow(3, (6-i)));
+                weight += pow(weights_[p][a] * 10, multipliers[i]);
             }
             weight *= viability_[a];
             if (weight > maxWeight) {
