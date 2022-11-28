@@ -27,6 +27,8 @@ algorithm
 -
 set
 -
+cmath
+-
 
 /workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.h
 string

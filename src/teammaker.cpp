@@ -8,6 +8,7 @@
 #include <cstring>
 #include <algorithm>
 #include <set>
+#include <cmath>
 
 TeamMaker::TeamMaker(const std::string& teamFile, const std::string& usageFile){
     std::vector<std::tuple<std::string, std::map<std::string, double>, double>> result = teammatesParser(teamFile);
@@ -286,11 +287,11 @@ std::vector<std::string> TeamMaker::generateTeam(const std::string& pokemons){
         unsigned index = *available.begin();
         for (auto a:available) {
 
-            double weight = usage_[a] * 0.25;
+            double weight = usage_[a] * 0.1;
             //double weight = 0;
             for (unsigned i = 0; i < team.size(); i++) {
                 unsigned p = team[i];
-                weight += (weights_[p][a]/(1+i));
+                weight += (weights_[p][a] * pow(3, (6-i)));
             }
             weight *= viability_[a];
             if (weight > maxWeight) {

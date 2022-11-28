@@ -24,6 +24,7 @@ int main(){
     // }
 
     //inputting the most popular mon gives out the most generic team
+    std::cout << "inputting Lando, expecting a generic team" << std::endl; 
     std::vector<std::string> team1 = tm->generateTeam("Landorus-Therian");
     for (auto p:team1) {
         std::cout << p << std::endl;
@@ -31,6 +32,7 @@ int main(){
     std::cout << std::endl;
 
     //inputting stall-mons give out stall team
+    std::cout << "inputting Pyukumuku and Skarmory, expecting a stall team" << std::endl; 
     std::vector<std::string> team2 = tm->generateTeam("Pyukumuku, skarmory");
     for (auto p:team2) {
         std::cout << p << std::endl;
@@ -38,6 +40,7 @@ int main(){
     std::cout << std::endl;
 
     //inputting rain-mons give out rain team
+    std::cout << "inputting Pelipper, expecting a rain team" << std::endl;
     std::vector<std::string> team3 = tm->generateTeam("pelipper");
     for (auto p:team3) {
         std::cout << p << std::endl;
@@ -45,6 +48,7 @@ int main(){
     std::cout << std::endl;
 
     //inputting some random stuff doesn't give meta team
+    std::cout << "inputting Marowak-Alola and Slowbro, expecting weird team" << std::endl;
     std::vector<std::string> team4 = tm->generateTeam("Marowak-Alola, slowbro");
     for (auto p:team4) {
         std::cout << p << std::endl;
@@ -52,12 +56,21 @@ int main(){
     std::cout << std::endl;
 
     //inputting some unsynergystic mons give out warning message, meaning dfs works
+    std::cout << "inputting Tentacruel and Golisopod, expecting message saying it's a bad choice" << std::endl;
     std::vector<std::string> team5 = tm->generateTeam("tentacruel, golisopod");
     for (auto p:team5) {
         std::cout << p << std::endl;
     }
+    std::cout << std::endl;
+    //inputting rain-mons give out rain team
+    std::cout << "inputting Politoed and Kingdra, expecting an offensive rain team" << std::endl;
+    std::vector<std::string> team6 = tm->generateTeam("politoed, kingdra");
+    for (auto p:team6) {
+        std::cout << p << std::endl;
+    }
+    std::cout << std::endl;
 
     //inputting invalid mon cause error
-    std::vector<std::string> die = tm->generateTeam("joe biden");
+    //std::vector<std::string> die = tm->generateTeam("joe biden");
     return 1;
 }
