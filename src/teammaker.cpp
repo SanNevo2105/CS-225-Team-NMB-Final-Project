@@ -257,6 +257,22 @@ std::vector<std::string> TeamMaker::generateTeam(const std::string& pokemons){
             std::__throw_invalid_argument(error.c_str());
         }
     }
+    bool teamSucks = false;
+    for (auto p: team) {
+        for (auto t: team) {
+            if (p != t) {
+                teamSucks = !(dfs(p, t) || dfs(t, p));
+                if (teamSucks) {
+                    break;
+                }
+            }
+        }
+    }
+    if (teamSucks) {
+        std::cout << "your input sucks lmao" << std::endl;
+    } else {
+        std::cout << "your input seems fine" << std::endl;
+    }
     unsigned size = weights_.size();
     std::set<unsigned> available;
     for (unsigned i = 0; i < size; ++i) {

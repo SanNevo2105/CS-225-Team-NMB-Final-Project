@@ -49,8 +49,15 @@ int main(){
     for (auto p:team4) {
         std::cout << p << std::endl;
     }
-    
+    std::cout << std::endl;
+
+    //inputting some unsynergystic mons give out warning message, meaning dfs works
+    std::vector<std::string> team5 = tm->generateTeam("tentacruel, golisopod");
+    for (auto p:team5) {
+        std::cout << p << std::endl;
+    }
+
     //inputting invalid mon cause error
-    std::vector<std::string> team5 = tm->generateTeam("joe biden");
+    std::vector<std::string> die = tm->generateTeam("joe biden");
     return 1;
 }
