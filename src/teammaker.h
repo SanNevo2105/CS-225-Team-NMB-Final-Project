@@ -23,7 +23,7 @@ class TeamMaker{
     bool dfs(unsigned start, unsigned key);
   
     //floyd warshall for finding the weight between each pokemon
-    std::vector<std::vector<double>> floydWarshall();
+    void floydWarshall();
   
     //the function for generating the team, taking in a string of pokemon names separated by comma and space
     //use helper function pokemonsToVector to turn the string of pokemons into a vector of pokemons
@@ -32,6 +32,9 @@ class TeamMaker{
   private:
     //map mapping pokemon with its index
     std::map<std::string, unsigned> index_;
+
+    //vector of pokemon names in index order
+    std::vector<std::string> mons_;
   
     //vector of its usage percentage, with index representing a pokemon
     std::vector<double> usage_;
@@ -46,5 +49,5 @@ class TeamMaker{
     std::vector<std::vector<double>> weights_;
   
     //helper function for generateTeam for turning a string of pokemon names to a vector of pokemons
-    std::vector<std::string> pokemonsToVector(const std::string& pokemons);
+    std::vector<std::string> pokemonsToVector(const std::string& str);
 };

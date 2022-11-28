@@ -21,6 +21,12 @@ stack
 -
 cassert
 -
+cstring
+-
+algorithm
+-
+set
+-
 
 /workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.h
 string

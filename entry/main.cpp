@@ -22,5 +22,35 @@ int main(){
     //     double usage = individual[i] * 100;
     //     std::cout<< name << " " << usage << "%" <<std::endl;
     // }
+
+    //inputting the most popular mon gives out the most generic team
+    std::vector<std::string> team1 = tm->generateTeam("Landorus-Therian");
+    for (auto p:team1) {
+        std::cout << p << std::endl;
+    }
+    std::cout << std::endl;
+
+    //inputting stall-mons give out stall team
+    std::vector<std::string> team2 = tm->generateTeam("Pyukumuku, skarmory");
+    for (auto p:team2) {
+        std::cout << p << std::endl;
+    }
+    std::cout << std::endl;
+
+    //inputting rain-mons give out rain team
+    std::vector<std::string> team3 = tm->generateTeam("pelipper");
+    for (auto p:team3) {
+        std::cout << p << std::endl;
+    }
+    std::cout << std::endl;
+
+    //inputting some random stuff doesn't give meta team
+    std::vector<std::string> team4 = tm->generateTeam("Marowak-Alola, slowbro");
+    for (auto p:team4) {
+        std::cout << p << std::endl;
+    }
+    
+    //inputting invalid mon cause error
+    std::vector<std::string> team5 = tm->generateTeam("joe biden");
     return 1;
 }
