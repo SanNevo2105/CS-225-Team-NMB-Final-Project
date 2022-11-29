@@ -239,28 +239,51 @@ void TeamMaker::floydWarshall(){
         for (unsigned i = 0; i < size; i++) {
             for (unsigned j = 0; j < size; j++) {
                 if (weights_[i][j] < weights_[i][k]*weights_[k][j]) {
+                    // if (mons_[i] == "politoed" && mons_[j] == "garchomp") {
+                    //     std::cout << mons_[i] << " to " << mons_[j] << ": " << weights_[i][j] << std::endl;
+                    //     std::cout <<"   but " << mons_[i] << " to " << mons_[k]<< ": " << weights_[i][k] << std::endl;
+                    //     std::cout << "   and " << mons_[k] << " to " << mons_[j]<< ": " << weights_[k][j] << std::endl;
+                    // }
                     weights_[i][j] = weights_[i][k]*weights_[k][j];
+                    // if (mons_[i] == "politoed" && mons_[j] == "garchomp") {
+                    //     std::cout <<"    thus new weight is " << weights_[i][j] << std::endl;
+                    //     std::cout << std::endl;
+                    // }
                 }
             }
         }
     }
+    // for (unsigned i = 0; i < size; i++) {
+    //     if (mons_[i] == "politoed" || mons_[i] == "scizor") {
+    //         std::cout << mons_[i] << std::endl;
+    //         for (unsigned j = 0; j < size; j++) {
+    //             if (mons_[j] == "garchomp" || mons_[j] == "kingdra") {
+    //                 std::cout << "  " << mons_[j] << ": " << weights_[i][j] << std::endl;
+    //             }
+                
+    //         }
+    //     }
+        
+    // }
 }
 
 std::vector<std::string> TeamMaker::generateTeam(const std::string& pokemons){
-    std::vector<unsigned> team;
+    std::set<unsigned> team;
+    std::vector<unsigned> teamVec;
     std::vector<std::string> teamStr = pokemonsToVector(pokemons);
     for (auto p: teamStr) {
         auto found = index_.find(p);
         if (found != index_.end()) {
-            team.push_back(found->second);
+            teamVec.push_back(found->second);
+            team.insert(found->second);
         } else {
             std::string error = "Pokemon " + p + " not found";
             std::__throw_invalid_argument(error.c_str());
         }
     }
     bool teamSucks = false;
-    for (auto p: team) {
-        for (auto t: team) {
+    for (auto p: teamVec) {
+        for (auto t: teamVec) {
             if (p != t) {
                 teamSucks = !(dfs(p, t) || dfs(t, p));
                 if (teamSucks) {
@@ -279,32 +302,88 @@ std::vector<std::string> TeamMaker::generateTeam(const std::string& pokemons){
     for (unsigned i = 0; i < size; ++i) {
         available.insert(available.end(), i);
     }
+    
     for (auto p:team) {
         available.erase(available.find(p));
+        //std::cout << mons_[p] <<"'s viability is " << viability_[p] << std::endl;
     }
-    std::vector<double> multipliers = {3, 3, 1, 0.2, 0};
-    while (team.size() < 6) {
+    if (teamVec.size() != 6) {
         double maxWeight = 0;
-        unsigned index = *available.begin();
-        for (auto a:available) {
-
-            double weight = usage_[a] * 0.1;
-            //double weight = 0;
-            for (unsigned i = 0; i < team.size(); i++) {
-                unsigned p = team[i];
-                weight += pow(weights_[p][a] * 10, multipliers[i]);
-            }
-            weight *= viability_[a];
-            if (weight > maxWeight) {
-                maxWeight = weight;
-                index = a;
+        unsigned index = 0;
+        for (unsigned i = 0; i < size; i++) {
+            if (team.find(i) != team.end() || viability_[i] >= 0.8) {
+                double weight = 0;
+                for (auto p:team) {
+                    weight += weights_[i][p];
+                }
+                if (weight > maxWeight) {
+                    maxWeight = weight;
+                    index = i;
+                }
             }
         }
-        available.erase(available.find(index));
-        team.push_back(index);
+        if (team.find(index) == team.end()) {
+            teamVec.push_back(index);
+            available.erase(available.find(index));
+        }
+        while(teamVec.size() < 6) {
+            std::vector<double> multipliers;
+            for (auto p:teamVec) {
+                double multiplier = 0;
+                for (auto t:teamVec) {
+                    multiplier += weights_[p][t] ;     
+                }
+                //std::cout << std::pow(multiplier, 5) << std::endl;
+                multipliers.push_back(std::pow(multiplier, 4));
+            }
+            index = 0;
+            maxWeight = 0;
+            for (auto a:available) {
+
+                double weight = usage_[a] * 0.1;
+                //double weight = 0;
+                for (unsigned i = 0; i < teamVec.size(); i++) {
+                    unsigned p = teamVec[i];
+                    //weight += pow(weights_[p][a] * 10, multipliers[i]);
+                    
+                    
+                    weight += std::pow(multipliers[i] * weights_[p][a], 3);
+                    // if (mons_[p] == "politoed" && (mons_[a] == "scizor" || mons_[a] == "kingdra")) {
+                    //     std:: cout << mons_[p] << " to " << mons_[a] << ": " << weights_[p][a]*viability_[a] << std::endl;
+                    //     std:: cout << usage_[a] * 0.1 << std::endl;
+                    // }
+                }   
+
+                if (weight > maxWeight) {
+                    maxWeight = weight;
+                    index = a;
+                }
+            }
+            //std::cout << "inserting "<< mons_[index] << ": " << (maxWeight) << std::endl;
+            available.erase(available.find(index));
+            teamVec.push_back(index);
+
+            // if (teamVec.size() == 6) {
+            //     multipliers = std::vector<double>();
+            //     for (auto p:teamVec) {
+            //         double multiplier = 0;
+            //         for (auto t:teamVec) {
+            //             if (p != t) {
+            //                 multiplier += weights_[p][t] ;
+            //             }
+            //         }
+                
+            //         multipliers.push_back(std::pow(multiplier, 4));
+            //     }
+            //     for (unsigned i = 0; i < multipliers.size(); i++) {
+            //         std::cout << mons_[teamVec[i]] << ": " << multipliers[i] <<std::endl;
+            //     }
+            //     std::cout << std::endl;
+            // }
+        }
     }
     std::vector<std::string> result;
-    for (auto p:team) {
+    for (auto p:teamVec) {
         result.push_back(mons_[p]);
     }
     return result;
