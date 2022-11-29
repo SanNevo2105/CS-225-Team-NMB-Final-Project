@@ -24,7 +24,7 @@ int main(){
     // }
 
     //inputting the most popular mon gives out the most generic team
-    std::cout << "inputting Lando, balanced" << std::endl; 
+    std::cout << "inputting Lando, expecting a balanced overused team" << std::endl; 
     std::vector<std::string> team1 = tm->generateTeam("Landorus-Therian");
     for (auto p:team1) {
         std::cout << p << std::endl;
@@ -40,15 +40,22 @@ int main(){
     std::cout << std::endl;
 
     //inputting rain-mons give out rain team
-    std::cout << "inputting Pelipper, expecting a rain team" << std::endl;
+    std::cout << "inputting Pelipper, expecting a normal rain team" << std::endl;
     std::vector<std::string> team3 = tm->generateTeam("pelipper");
     for (auto p:team3) {
         std::cout << p << std::endl;
     }
     std::cout << std::endl;
 
+    
+    std::cout << "inputting kingdra and politoed, expecting very different rain team" << std::endl;
+    std::vector<std::string> team10 = tm->generateTeam("kingdra, politoed");
+    for (auto p:team10) {
+        std::cout << p << std::endl;
+    }
+    std::cout << std::endl;
     //inputting some random stuff doesn't give meta team
-    std::cout << "inputting Marowak-Alola and Slowbro, expecting weird team" << std::endl;
+    std::cout << "inputting Marowak-Alola and Slowbro, expecting weird off-meta team" << std::endl;
     std::vector<std::string> team4 = tm->generateTeam("Marowak-Alola, slowbro");
     for (auto p:team4) {
         std::cout << p << std::endl;
@@ -63,15 +70,14 @@ int main(){
     }
     std::cout << std::endl;
     //inputting rain-mons give out rain team
-    //note that garchomp is there since both heliolisk and scizor love garchomp, and politoed likes heliolisk
-    std::cout << "inputting Politoed and scizor, expecting a different rain team" << std::endl;
-    std::vector<std::string> team6 = tm->generateTeam("politoed, scizor");
+    std::cout << "inputting pelipper and polteageist, expecting some weird rain-mon" << std::endl;
+    std::vector<std::string> team6 = tm->generateTeam("pelipper, Polteageist");
     for (auto p:team6) {
         std::cout << p << std::endl;
     }
     std::cout << std::endl;
 
-    //inputting rain-mons give out rain team
+    
     std::cout << "inputting blissey, expecting a stall team without dragapult and lele, should not have chansey" << std::endl;
     std::vector<std::string> team7 = tm->generateTeam("blissey");
     for (auto p:team7) {
@@ -87,12 +93,19 @@ int main(){
     }
     std::cout << std::endl;
 
-    std::cout << "inputting slowbro, lando, rillaboom, and melmetal, expecting dragalge" << std::endl;
+    std::cout << "inputting slowbro, lando, rillaboom, and melmetal, expecting xurkitree" << std::endl;
     std::vector<std::string> team9 = tm->generateTeam("slowbro, landorus-therian, rillaboom, melmetal");
     for (auto p:team9) {
         std::cout << p << std::endl;
     }
-    //inputting invalid mon cause error
-    //std::vector<std::string> die = tm->generateTeam("joe biden");
+    
+    std::cout << std::endl;
+    std::cout << "inputting less-related mon (zapdos and bulu) just to see what happens" << std::endl;
+    std::vector<std::string> team11 = tm->generateTeam("zapdos, tapu bulu");
+    for (auto p:team11) {
+        std::cout << p << std::endl;
+    }
+    // //inputting invalid mon cause error
+    // std::vector<std::string> die = tm->generateTeam("joe biden");
     return 1;
 }
