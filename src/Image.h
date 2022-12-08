@@ -28,6 +28,7 @@ namespace cs225 {
             void saturate(double amount);
             void scale(double factor);
             void scale(unsigned w, unsigned h);
+            
 
         private:
         //nothing in private
