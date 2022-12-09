@@ -7,16 +7,17 @@
 
 #include <string>
 using std::string;
+#include <vector>
 
-#include"/workspaces/CS-225-Team-NMB-Final-Project/White_full.png"
+//#include"/workspaces/cs225/CS-225-Team-NMB-Final-Project-main/White_full.png"
 //#include"PNG.h"
-#include"cs225/PNG.h"
+#include"/workspaces/cs225/CS-225-Team-NMB-Final-Project-main/cs225/PNG.h"
 
 namespace cs225 {
     class Image : public PNG{
         public:
-            Image & drawImage(vector<vector<int>> vect, Image & pic);
-            void darken();
+            Image & drawImage(std::vector<std::vector<int>> vect, Image & pic);
+            /*void darken();
             void darken(double amount);
             void desaturate();
             void desaturate(double amount);
@@ -28,10 +29,12 @@ namespace cs225 {
             void saturate();
             void saturate(double amount);
             void scale(double factor);
-            void scale(unsigned w, unsigned h);
+            void scale(unsigned w, unsigned h);*/
             
 
         private:
         //nothing in private
     };
+
+
 }
