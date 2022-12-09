@@ -8,13 +8,14 @@
 #include <string>
 using std::string;
 
-//#include"/workspaces/CS225/release-f22-main/mp_stickers/lib/cs225/PNG.h"   //when grading on pl, what should this be?
+#include"/workspaces/CS-225-Team-NMB-Final-Project/White_full.png"
 //#include"PNG.h"
 #include"cs225/PNG.h"
 
 namespace cs225 {
     class Image : public PNG{
         public:
+            Image & drawImage(vector<vector<int>> vect, Image & pic);
             void darken();
             void darken(double amount);
             void desaturate();
