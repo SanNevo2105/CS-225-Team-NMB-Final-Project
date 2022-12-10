@@ -1,31 +1,32 @@
-#include"Image.h"
+#include "Image.h"
 #include <iostream>
 #include <algorithm>
 #include <vector>
 using namespace cs225;
 
-Image & Image::drawImage(std::vector<std::vector<int>> vect, Image & pic){
-    std::vector<int> x_axis;
-    int x = 100;
-    for(size_t i = 0; i < 1700; i= i+30){
-        x_axis.push_back(i);
+Image & Image::drawImage(std::vector<std::vector<unsigned>> vect, Image & pic, std::vector<std::pair<unsigned, unsigned>> pos){
+    std::vector<unsigned> x_axis;
+    std::vector<unsigned> y_axis;
+    for(auto p: pos){
+        x_axis.push_back(p.first);
+        y_axis.push_back(p.second);
     }
     std::random_shuffle( x_axis.begin(), x_axis.end());
 
-    std::vector<int> y_axis;
-    int y = 100;
+    
+    unsigned y = 100;
     for(size_t j = 0; j < 1100; j = j + 20){
         y_axis.push_back(j);
     }
     std::random_shuffle( y_axis.begin(), y_axis.end());      //randomly assign coordinate to these pokemons
-    std::vector<int> length_for_layer = {6,5,4,3,2,1};
+    std::vector<unsigned> length_for_layer = {6,5,4,3,2,1};
     //HSLAPixel & cur_pixel = HSLAPixel();
     for(size_t i = 0; i < 54; i ++){                         //draw these pokemons first;
         pic.getPixel(x_axis[i], y_axis[i]).l = 0;
         //cur_pixel.l = 0;   
-        for(int k = 1; k < 7; k ++){
+        for(unsigned k = 1; k < 7; k ++){
             if(x_axis[i]+k <= 1800){
-                for(int w = length_for_layer[k - 1]; w > 0; w-- ){
+                for(unsigned w = length_for_layer[k - 1]; w > 0; w-- ){
                     if(y_axis[i]+w <= 1200){
                         pic.getPixel(x_axis[i]+k, y_axis[i]+w).l = 0;
                     }
@@ -37,7 +38,7 @@ Image & Image::drawImage(std::vector<std::vector<int>> vect, Image & pic){
             }
 
             if(x_axis[i]-k > 0){
-                for(int w = length_for_layer[k - 1]; w > 0; w-- ){
+                for(unsigned w = length_for_layer[k - 1]; w > 0; w-- ){
                     if(y_axis[i]-w > 0){
                         pic.getPixel(x_axis[i]-k, y_axis[i]-w).l = 0;
                     }
@@ -56,14 +57,14 @@ Image & Image::drawImage(std::vector<std::vector<int>> vect, Image & pic){
         }        
     }                   
 
-    for(int i = 0; i < 3; i ++){                             //change to 2 in order to debug
-        for(int j = 0; j < 3; j++){
+    for(unsigned i = 0; i < 3; i ++){                             //change to 2 in order to debug
+        for(unsigned j = 0; j < 3; j++){
             if(vect[i][j] == 1){                              //draw line if there is connection
                 //HSLAPixel & cur_pixel = pic.getPixel(x_axis[i], y_axis[i]);
                 //HSLAPixel & target_pixel = pic.getPixel(x_axis[j], y_axis[j]);
                 size_t start_x = x_axis[i];
                 size_t start_y = y_axis[i];
-                int y_diff, x_diff;
+                unsigned y_diff, x_diff;
                 if(y_axis[i] > y_axis[j]){
                     y_diff = (y_axis[i] - y_axis[j]);
                 }
@@ -79,9 +80,9 @@ Image & Image::drawImage(std::vector<std::vector<int>> vect, Image & pic){
                     x_diff = (x_axis[j] - x_axis[i]);     
                 }
                  
-                int A = 2 * y_diff;
-                int B = A - 2 * x_diff;
-                int P = A - x_diff;
+                unsigned A = 2 * y_diff;
+                unsigned B = A - 2 * x_diff;
+                unsigned P = A - x_diff;
                 size_t final_x = start_x + x_diff;
                 for(size_t i=start_x; i < final_x; i ++){
                     if(P < 0){

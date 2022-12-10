@@ -39,10 +39,10 @@
 
 Graph::Graph(std::vector<std::map<unsigned, double>> teammate, double length, double threshold, unsigned limit, double cooling)
 : graph_(teammate), length_(length), threshold_(threshold), limit_(limit), cooling_(cooling){
-    graphicOutput_ = graphicOutput();
+    pos_ = pos();
 }
 
-std::vector<std::pair<unsigned, unsigned>> Graph::graphicOutput(){
+std::vector<std::pair<unsigned, unsigned>> Graph::pos(){
     std::vector<std::pair<unsigned, unsigned>> output(graph_.size());
     for (unsigned i = 0; i < graph_.size(); i++) {
         output.push_back(std::make_pair(i, i));
@@ -76,8 +76,8 @@ std::vector<std::pair<unsigned, unsigned>> Graph::graphicOutput(){
     }
     return output;
 }
-std::vector<std::pair<unsigned, unsigned>> Graph::getOutput() const{
-    return graphicOutput_;
+std::vector<std::pair<unsigned, unsigned>> Graph::getPos() const{
+    return pos_;
 }
 
 std::pair<double, double> Graph::getForce(const std::pair<unsigned, unsigned>& start, const std::pair<unsigned, unsigned>& end) const{

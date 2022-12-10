@@ -13,7 +13,7 @@ using std::string;
 namespace cs225 {
     class Image : public PNG{
         public:
-            Image & drawImage(std::vector<std::vector<int>> vect, Image & pic);
+            Image & drawImage(std::vector<std::vector<unsigned>> vect, Image & pic, std::vector<std::pair<unsigned, unsigned>> pos);
         private:
         //nothing in private
     };
