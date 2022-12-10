@@ -81,17 +81,4 @@ for(unsigned int i = 0; i < team.size(); i++) {
   // push pokemon_with_neightbor into al_pokemon_with_neighbor
     pokemon_with_neighbor.clear();
 }
-
-// populate the matrix to how it should be 
-// set of pokemons inside the all_pokemon_with_neighbor, and include everything in the team
- 
- for(unsigned int i = 0; i < all_pokemon_with_neighbor.size(); i++) {
-      for(unsigned int j = 0; j < all_pokemon_with_neighbor.at(i).size(); j++) {
-        // We know that the result from generated team are for sure neighbors && we know that 
-        // first 6 element in all_pokemon_with_neighbot[0][j] are neighbors
-          std::vector<int> inner;
-       }
-    }  
-}
-
 };
