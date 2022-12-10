@@ -36,6 +36,11 @@
         "deque": "cpp",
         "cstring": "cpp",
         "functional": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "chrono": "cpp",
+        "cstddef": "cpp",
+        "ctime": "cpp",
+        "ratio": "cpp",
+        "variant": "cpp"
     }
 }

@@ -57,9 +57,35 @@ include src/CMakeFiles/src.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/src.dir/flags.make
 
+src/CMakeFiles/src.dir/Image.cpp.o: src/CMakeFiles/src.dir/flags.make
+src/CMakeFiles/src.dir/Image.cpp.o: ../src/Image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/src.dir/Image.cpp.o"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/Image.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/Image.cpp
+
+src/CMakeFiles/src.dir/Image.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/Image.cpp.i"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS-225-Team-NMB-Final-Project/src/Image.cpp > CMakeFiles/src.dir/Image.cpp.i
+
+src/CMakeFiles/src.dir/Image.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/Image.cpp.s"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS-225-Team-NMB-Final-Project/src/Image.cpp -o CMakeFiles/src.dir/Image.cpp.s
+
+src/CMakeFiles/src.dir/graph.cpp.o: src/CMakeFiles/src.dir/flags.make
+src/CMakeFiles/src.dir/graph.cpp.o: ../src/graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/src.dir/graph.cpp.o"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/graph.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/graph.cpp
+
+src/CMakeFiles/src.dir/graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph.cpp.i"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS-225-Team-NMB-Final-Project/src/graph.cpp > CMakeFiles/src.dir/graph.cpp.i
+
+src/CMakeFiles/src.dir/graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph.cpp.s"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS-225-Team-NMB-Final-Project/src/graph.cpp -o CMakeFiles/src.dir/graph.cpp.s
+
 src/CMakeFiles/src.dir/teammaker.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/teammaker.cpp.o: ../src/teammaker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/src.dir/teammaker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/src.dir/teammaker.cpp.o"
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/teammaker.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.cpp
 
 src/CMakeFiles/src.dir/teammaker.cpp.i: cmake_force
@@ -72,15 +98,19 @@ src/CMakeFiles/src.dir/teammaker.cpp.s: cmake_force
 
 # Object files for target src
 src_OBJECTS = \
+"CMakeFiles/src.dir/Image.cpp.o" \
+"CMakeFiles/src.dir/graph.cpp.o" \
 "CMakeFiles/src.dir/teammaker.cpp.o"
 
 # External object files for target src
 src_EXTERNAL_OBJECTS =
 
+src/libsrc.a: src/CMakeFiles/src.dir/Image.cpp.o
+src/libsrc.a: src/CMakeFiles/src.dir/graph.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/teammaker.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/build.make
 src/libsrc.a: src/CMakeFiles/src.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libsrc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libsrc.a"
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean_target.cmake
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src.dir/link.txt --verbose=$(VERBOSE)
 

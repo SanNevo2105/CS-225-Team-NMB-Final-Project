@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/src.dir/Image.cpp.o"
+  "CMakeFiles/src.dir/graph.cpp.o"
   "CMakeFiles/src.dir/teammaker.cpp.o"
   "libsrc.a"
   "libsrc.pdb"

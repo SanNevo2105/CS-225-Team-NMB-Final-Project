@@ -11,7 +11,7 @@ using std::string;
 
 //#include"/workspaces/cs225/CS-225-Team-NMB-Final-Project-main/White_full.png"
 //#include"PNG.h"
-#include"/workspaces/cs225/CS-225-Team-NMB-Final-Project-main/cs225/PNG.h"
+#include"/workspaces/CS-225-Team-NMB-Final-Project/cs225/PNG.h"
 
 namespace cs225 {
     class Image : public PNG{
