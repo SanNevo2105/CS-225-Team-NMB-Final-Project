@@ -72,3 +72,24 @@ TEST_CASE("Floyd-warshall", "[fw]") {
     }
 }
 
+TEST_CASE("depthfirstsearch", "[dfs]") {
+    std::string teamFile = "../test-moveset.txt";
+    std::string usageFile = "../test-usage.txt";
+    TeamMaker* tm = new TeamMaker(teamFile, usageFile); 
+    assert(tm->mons_[0] == "landorus-therian");
+    assert(tm->mons_[1] == "dragapult");
+    assert(tm->mons_[2] == "heatran");
+    assert(tm->mons_[3] == "clefable");
+    assert(tm->mons_[4] == "crobat");
+
+    for(unsigned i=0; i < 4; i ++){
+        for(unsigned j =0; j < 4; j ++ ){
+            if(i != j){
+                assert(TeamMaker::dfs(i, j) == true);
+            }
+        }
+    }
+    for(unsigned i=0; i < 4; i ++){
+        assert(TeamMaker::dfs(4, i) == false);
+    }
+}
