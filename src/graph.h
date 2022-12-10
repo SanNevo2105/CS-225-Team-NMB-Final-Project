@@ -2,12 +2,14 @@
 #include <string>
 #include <vector>
 #include <map>
+#include"cs225/PNG.h"
 
 class Graph {
   public: 
     Graph(std::vector<std::map<unsigned, double>> teammate, double length, double threshold, unsigned limit, double cooling);
     std::vector<std::pair<unsigned, unsigned>> pos();
     std::vector<std::pair<unsigned, unsigned>> getPos() const;
+    cs225::PNG & drawImage(std::vector<std::vector<unsigned>> vect, cs225::PNG & pic, std::vector<std::pair<unsigned, unsigned>> pos);
   private:
     std::vector<std::map<unsigned, double>> graph_;
     double length_;
