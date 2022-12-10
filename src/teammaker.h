@@ -49,5 +49,5 @@ class TeamMaker{
     std::vector<std::vector<double>> weights_;
   
     //helper function for generateTeam for turning a string of pokemon names to a vector of pokemons
-    std::vector<std::string> pokemonsToVector(const std::string& str);
+    std::vector<unsigned> pokemonsToVector(const std::string& str);
 };

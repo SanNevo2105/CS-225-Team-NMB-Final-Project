@@ -269,17 +269,9 @@ void TeamMaker::floydWarshall(){
 
 std::vector<std::string> TeamMaker::generateTeam(const std::string& pokemons){
     std::set<unsigned> team;
-    std::vector<unsigned> teamVec;
-    std::vector<std::string> teamStr = pokemonsToVector(pokemons);
-    for (auto p: teamStr) {
-        auto found = index_.find(p);
-        if (found != index_.end()) {
-            teamVec.push_back(found->second);
-            team.insert(found->second);
-        } else {
-            std::string error = "Pokemon " + p + " not found";
-            std::__throw_invalid_argument(error.c_str());
-        }
+    std::vector<unsigned> teamVec = pokemonsToVector(pokemons);
+    for (auto p:teamVec) {
+        team.insert(p);
     }
     bool teamSucks = false;
     for (auto p: teamVec) {
@@ -397,8 +389,8 @@ std::vector<std::string> TeamMaker::generateTeam(const std::string& pokemons){
     return result;
 }
 
-std::vector<std::string> TeamMaker::pokemonsToVector(const std::string& str) {
-    std::vector<std::string> result;
+std::vector<unsigned> TeamMaker::pokemonsToVector(const std::string& str) {
+    std::vector<std::string> teamStr;
     std::string pokemons = str;
     std::transform(pokemons.begin(), pokemons.end(), pokemons.begin(), ::tolower);
     unsigned start = 0;
@@ -407,14 +399,24 @@ std::vector<std::string> TeamMaker::pokemonsToVector(const std::string& str) {
         while(end < pokemons.size() && pokemons[end] != ',') {
             end++;
         }
-        result.push_back(pokemons.substr(start, end-start));
+        teamStr.push_back(pokemons.substr(start, end-start));
         while (end < pokemons.size() && (pokemons[end] == ',' || pokemons[end] == ' ')) {
             end++;
         }
         start = end;
     }
-    if (result.size() > 6) {
+    if (teamStr.size() > 6) {
         std::__throw_invalid_argument("you inputted more than 6 Pokemons");
     }
-    return result;
+    std::vector<unsigned> teamVec;
+    for (auto p: teamStr) {
+        auto found = index_.find(p);
+        if (found != index_.end()) {
+            teamVec.push_back(found->second);
+        } else {
+            std::string error = "Pokemon " + p + " not found";
+            std::__throw_invalid_argument(error.c_str());
+        }
+    }
+    return teamVec;
 }
