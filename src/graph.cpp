@@ -1,5 +1,6 @@
 #include "graph.h"
 #include <cmath>
+#include <assert.h>
 
 // graph(TeamMaker* teammate, const std::string& pokemons) {
 // std::vector<std::string> team = teammate->generateTeam(pokemons);
@@ -55,13 +56,20 @@ Graph::Graph(std::map<std::string, std::vector<std::string>>& adjList, double le
         }
         graph_.push_back(neighbours);
     }
+    // for (unsigned i = 0; i < graph_.size(); i++) {
+    //     std::cout << i << ": ";
+    //     for (auto g:graph_[i]) {
+    //         std::cout << g << ", ";
+    //     }
+    //     std::cout << std::endl;
+    // }
     pos_ = pos();
 }
 
-cs225::PNG & Graph::drawImage(cs225::PNG & pic, std::vector<std::pair<unsigned, unsigned>> pos){
+cs225::PNG & Graph::drawImage(cs225::PNG & pic){
     std::vector<unsigned> x_axis;
     std::vector<unsigned> y_axis;
-    for(auto p: pos){
+    for(auto p: pos_){
         x_axis.push_back(p.first);
         y_axis.push_back(p.second);
     }
@@ -164,27 +172,34 @@ line from A to B:*/
 }
 
 std::vector<std::pair<unsigned, unsigned>> Graph::pos(){
-    std::vector<std::pair<unsigned, unsigned>> output(graph_.size());
+    std::vector<std::pair<unsigned, unsigned>> output;
+    //1800, 1200
     for (unsigned i = 0; i < graph_.size(); i++) {
-        output.push_back(std::make_pair(i, i));
+        output.push_back(std::make_pair(i, std::pow(i, 0.5)));
     }
     unsigned t = 0;
     while (t < limit_) {
+        //std::cout << "enter loop" << std::endl;
         double maxForce = 0;
         std::vector<std::pair<unsigned, unsigned>> temp(graph_.size());
         for (unsigned start = 0; start < graph_.size(); start++) {
             double xForce = 0;
             double yForce = 0;
-            for (auto neighbour: graph_[start]) {
-                unsigned end = neighbour;
+            std::cout << graph_[start].size() << std::endl;
+            for (auto end: graph_[start]) {
+                //std::cout << "end: " << end << std::endl;
                 std::pair<double, double> force = getForce(output[start], output[end]);
+                //std::cout << "start: " << output[start].first << ", " << output[start].second << std::endl;
+                //std::cout << "end: " << output[end].first << ", " << output[end].second << std::endl;
                 xForce += force.first;
                 yForce += force.second;
+                std::cout << "force: " << force.first << ", " << force.second << std::endl;
             }
             double mag = getMag(xForce, yForce);
             if (mag > maxForce) {
                 maxForce = mag;
             }
+            //std::cout << mag << std::endl;
             unsigned xPos = output[start].first + (cooling_*xForce);
             unsigned yPos = output[start].second + (cooling_*yForce);
             temp.push_back(std::make_pair(xPos, yPos));
@@ -194,8 +209,13 @@ std::vector<std::pair<unsigned, unsigned>> Graph::pos(){
             break;
         }
         t++;
+        break;
     }
-    return output;
+    std::vector<std::pair<unsigned, unsigned>> result;
+    for (auto p: output) {
+        result.push_back(std::make_pair(p.first * 22, p.second * 22));
+    }
+    return result;
 }
 std::vector<std::pair<unsigned, unsigned>> Graph::getPos() const{
     return pos_;
@@ -218,13 +238,22 @@ std::pair<double, double> Graph::getAttr(const std::pair<double, double>& unitVe
 }
 
 double Graph::getDistance(const std::pair<unsigned, unsigned>& start, const std::pair<unsigned, unsigned>& end) const{
+    std::cout << "start: " << start.first << ", " << start.second << std::endl;
+    std::cout << "end: " << start.first << std::endl;
+    
     unsigned x = start.first - end.first;
     unsigned y = start.second - end.second;
-    return getMag(x, y);
+    std::cout << "x: " << x << ", y: " << y << std::endl;
+    double distance = getMag(x, y);
+    assert(distance > 0);
+    return distance;
 }
 double Graph::getMag(double x, double y) const {
-    unsigned xSquared = std::pow(x, 2);
-    unsigned ySquared = std::pow(y, 2);
+    unsigned xSquared = x * x;
+    unsigned ySquared = y * y;
+    assert(xSquared >= 0);
+    assert(ySquared >= 0);
+    //std::cout << xSquared << ", " << ySquared << std::endl;
     return std::pow(double(xSquared + ySquared), 0.5);
 }
 std::pair<double, double> Graph::getUnitVec(const std::pair<unsigned, unsigned>& start, const std::pair<unsigned, unsigned>& end, double distance) const{

@@ -40,7 +40,7 @@ TEST_CASE("Floyd-warshall", "[fw]") {
     std::cout << tm->weights_[0][3] << " compared to " << std::pow(0.14649 * 0.36741, 4) << std::endl;
     assert(std::abs(tm->weights_[0][3] - std::pow(0.14649 * 0.36741, 4)) < EPSILON);
     assert(std::abs(tm->weights_[0][4]-0) < EPSILON);
-    /*
+    
     //use 2.22045e-016
     //Dragapult's entries
     std::cout << tm->weights_[1][0] << " compared to " << 0.57344 << std::endl;
@@ -71,7 +71,7 @@ TEST_CASE("Floyd-warshall", "[fw]") {
         assert(tm->teammates_[4].find(i) == tm->teammates_[4].end());
         assert(tm->weights_[i][4] == 0);
     }
-    */
+    
 }
 
 TEST_CASE("depthfirstsearch", "[dfs]") {
