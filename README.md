@@ -16,7 +16,7 @@ Project Proposal, Contract, etc can be found in /documents
 The major files that contains our function is placed with src
 
 # Running Instructions
-The code can be ran inside Docker, and if you need help setting it up, you can go here.
+The code can be ran inside Docker, and if you need help setting it up, you can go to https://courses.engr.illinois.edu/cs225/sp2022/resources/own-machine/.
 
 # Executable
 To use the pokemon team generator program that we wrote, you would need to mkdir build, cd build and cmake .. to make the build file before run make , then ./main. 
