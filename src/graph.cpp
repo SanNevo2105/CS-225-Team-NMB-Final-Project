@@ -37,7 +37,7 @@ cs225::PNG & Graph::drawImage(cs225::PNG & pic){
         x_axis.push_back(p.first);
         y_axis.push_back(p.second);
     }
-     //randomly assign coordinate to these pokemons
+    //randomly assign coordinate to these pokemons
     std::vector<int> length_for_layer = {6,5,4,3,2,1};
     //HSLAPixel & cur_pixel = HSLAPixel();
     for(size_t i = 0; i < graph_.size(); i ++){                         //draw these pokemons first;
@@ -75,65 +75,32 @@ cs225::PNG & Graph::drawImage(cs225::PNG & pic){
                 pic.getPixel(x_axis[i], y_axis[i]-k).l = 0;
             }
         }        
-    }                   
+    }             
+
     for (unsigned i = 0; i < graph_.size(); i++){
         for (unsigned j: graph_[i]){
-                                        //draw line if there is connection
-            //HSLAPixel & cur_pixel = pic.getPixel(x_axis[i], y_axis[i]);
-            //HSLAPixel & target_pixel = pic.getPixel(x_axis[j], y_axis[j]);
             size_t start_x = x_axis[i];
             size_t start_y = y_axis[i];
+            size_t end_x = x_axis[j];
+            size_t end_y = y_axis[j];
             int y_diff, x_diff;
-            if(y_axis[i] > y_axis[j]){
-                y_diff = (y_axis[i] - y_axis[j]);
+            x_diff = end_x - start_x;
+            y_diff = end_y - start_y;
+            double distance = std::sqrt(x_diff*x_diff + y_diff * y_diff);
+            std::vector<int> x_vector = {x_diff, y_diff};
+            unsigned int x = start_x;
+            unsigned int y = start_y;
+            double increment = 0;
+            while(increment < 1){
+                unsigned xTemp = x + x_vector[0] * increment;
+                unsigned yTemp = y + x_vector[1] * increment;
+                increment += 0.001;
+                pic.getPixel(xTemp,yTemp).l = 0;
             }
-            else{
-                y_diff = (y_axis[j] - y_axis[i]);
-            }
-            if(x_axis[i] > x_axis[j]){
-                x_diff = (x_axis[i] - x_axis[j]);
-                start_x = x_axis[j];
-                start_y = y_axis[j];
-            }
-            else{
-                x_diff = (x_axis[j] - x_axis[i]);     
-            }
-                
-            int A = 2 * y_diff;
-            int B = A - 2 * x_diff;
-            int P = A - x_diff;
-            size_t final_x = start_x + x_diff;
-            for(size_t i=start_x; i < final_x; i ++){
-                if(P < 0){
-                    P = A + P;
-                    pic.getPixel(start_x + 1, start_y).l = 0;
-                    start_x++;
-                }
-                else{
-                    P = B + P;
-                    pic.getPixel(start_x + 1, start_y - 1).l = 0;
-                    start_x++;
-                    start_y--;
-                }
-            }
-        }
+        } 
     }
+    
     return pic;
-
-/*One way that a computer can know which pixels to colour, is with Brensenham’s
-Line Algorithm. It follows these simple rules:
-A = 2× change in Y value
-B = A − 2× change in X value
-P = A− change in X value
-Fill the starting pixel. Then for every position along the X axis:
-• if P is less than 0, draw the new pixel on the same line as the last pixel,
-and add A to P.
-• if P was 0 or greater, draw the new pixel one line higher than the last
-pixel, and add B to P.
-• continue this process until we reach the end of the line.
-Without using a ruler, use Bresenham’s Line Algorithm to draw a straight
-line from A to B:*/
-
 }
 
 std::vector<std::pair<unsigned, unsigned>> Graph::pos(){
