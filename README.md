@@ -6,8 +6,8 @@ https://www.smogon.com/stats/2022-10/gen8ou-1825.txt
 https://www.smogon.com/stats/2022-10/moveset/gen8ou-1825.txt
 . Mainly focusing on the percentage and possibility of one pokemon being on a team with another, and their usage percent as an individual. 
 
-Repo Structure
-Deliverables
+#Repo Structure
+#Deliverables
 Datasets are stored as txt files.
 Tests are in /tests
 Project Proposal, Contract, etc can be found in /documents
