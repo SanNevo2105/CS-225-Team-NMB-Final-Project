@@ -37,12 +37,28 @@
 //     }  
 // }
 
-Graph::Graph(std::vector<std::map<unsigned, double>> teammate, double length, double threshold, unsigned limit, double cooling)
-: graph_(teammate), length_(length), threshold_(threshold), limit_(limit), cooling_(cooling){
+Graph::Graph(std::map<std::string, std::vector<std::string>>& adjList, double length, double threshold, unsigned limit, double cooling)
+: length_(length), threshold_(threshold), limit_(limit), cooling_(cooling){
+    std::map<std::string, unsigned> indexes;
+    unsigned i = 0;
+    for (auto mon:adjList) {
+        mons_.push_back(mon.first);
+        indexes[mon.first] = i;
+        i++;
+    }
+    for (auto mon:adjList) {
+        std::vector<unsigned> neighbours;
+        for (auto n:mon.second) {
+            if (n != mon.first) {
+                neighbours.push_back(indexes[n]);
+            }
+        }
+        graph_.push_back(neighbours);
+    }
     pos_ = pos();
 }
 
-cs225::PNG & Graph::drawImage(std::vector<std::vector<unsigned>> vect, cs225::PNG & pic, std::vector<std::pair<unsigned, unsigned>> pos){
+cs225::PNG & Graph::drawImage(cs225::PNG & pic, std::vector<std::pair<unsigned, unsigned>> pos){
     std::vector<unsigned> x_axis;
     std::vector<unsigned> y_axis;
     for(auto p: pos){
@@ -87,46 +103,44 @@ cs225::PNG & Graph::drawImage(std::vector<std::vector<unsigned>> vect, cs225::PN
             }
         }        
     }                   
-
-    for(unsigned i = 0; i < 3; i ++){                             //change to 2 in order to debug
-        for(unsigned j = 0; j < 3; j++){
-            if(vect[i][j] == 1){                              //draw line if there is connection
-                //HSLAPixel & cur_pixel = pic.getPixel(x_axis[i], y_axis[i]);
-                //HSLAPixel & target_pixel = pic.getPixel(x_axis[j], y_axis[j]);
-                size_t start_x = x_axis[i];
-                size_t start_y = y_axis[i];
-                unsigned y_diff, x_diff;
-                if(y_axis[i] > y_axis[j]){
-                    y_diff = (y_axis[i] - y_axis[j]);
+    for (unsigned i = 0; i < graph_.size(); i++){
+        for (unsigned j: graph_[i]){
+                                        //draw line if there is connection
+            //HSLAPixel & cur_pixel = pic.getPixel(x_axis[i], y_axis[i]);
+            //HSLAPixel & target_pixel = pic.getPixel(x_axis[j], y_axis[j]);
+            size_t start_x = x_axis[i];
+            size_t start_y = y_axis[i];
+            unsigned y_diff, x_diff;
+            if(y_axis[i] > y_axis[j]){
+                y_diff = (y_axis[i] - y_axis[j]);
+            }
+            else{
+                y_diff = (y_axis[j] - y_axis[i]);
+            }
+            if(x_axis[i] > x_axis[j]){
+                x_diff = (x_axis[i] - x_axis[j]);
+                start_x = x_axis[j];
+                start_y = y_axis[j];
+            }
+            else{
+                x_diff = (x_axis[j] - x_axis[i]);     
+            }
+                
+            unsigned A = 2 * y_diff;
+            unsigned B = A - 2 * x_diff;
+            unsigned P = A - x_diff;
+            size_t final_x = start_x + x_diff;
+            for(size_t i=start_x; i < final_x; i ++){
+                if(P < 0){
+                    P = A + P;
+                    pic.getPixel(start_x + 1, start_y).l = 0;
+                    start_x++;
                 }
                 else{
-                    y_diff = (y_axis[j] - y_axis[i]);
-                }
-                if(x_axis[i] > x_axis[j]){
-                    x_diff = (x_axis[i] - x_axis[j]);
-                    start_x = x_axis[j];
-                    start_y = y_axis[j];
-                }
-                else{
-                    x_diff = (x_axis[j] - x_axis[i]);     
-                }
-                 
-                unsigned A = 2 * y_diff;
-                unsigned B = A - 2 * x_diff;
-                unsigned P = A - x_diff;
-                size_t final_x = start_x + x_diff;
-                for(size_t i=start_x; i < final_x; i ++){
-                    if(P < 0){
-                        P = A + P;
-                        pic.getPixel(start_x + 1, start_y).l = 0;
-                        start_x++;
-                    }
-                    else{
-                        P = B + P;
-                        pic.getPixel(start_x + 1, start_y - 1).l = 0;
-                        start_x++;
-                        start_y--;
-                    }
+                    P = B + P;
+                    pic.getPixel(start_x + 1, start_y - 1).l = 0;
+                    start_x++;
+                    start_y--;
                 }
             }
         }
@@ -162,7 +176,7 @@ std::vector<std::pair<unsigned, unsigned>> Graph::pos(){
             double xForce = 0;
             double yForce = 0;
             for (auto neighbour: graph_[start]) {
-                unsigned end = neighbour.first;
+                unsigned end = neighbour;
                 std::pair<double, double> force = getForce(output[start], output[end]);
                 xForce += force.first;
                 yForce += force.second;

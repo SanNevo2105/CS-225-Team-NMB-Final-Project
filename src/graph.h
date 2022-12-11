@@ -6,16 +6,17 @@
 
 class Graph {
   public: 
-    Graph(std::vector<std::map<unsigned, double>> teammate, double length, double threshold, unsigned limit, double cooling);
+    Graph(std::map<std::string, std::vector<std::string>>& adjList, double length, double threshold, unsigned limit, double cooling);
     std::vector<std::pair<unsigned, unsigned>> pos();
     std::vector<std::pair<unsigned, unsigned>> getPos() const;
-    cs225::PNG & drawImage(std::vector<std::vector<unsigned>> vect, cs225::PNG & pic, std::vector<std::pair<unsigned, unsigned>> pos);
+    cs225::PNG & drawImage(cs225::PNG & pic, std::vector<std::pair<unsigned, unsigned>> pos);
   private:
-    std::vector<std::map<unsigned, double>> graph_;
+    std::vector<std::vector<unsigned>> graph_;
     double length_;
     double threshold_;
     unsigned limit_;
     double cooling_;
+    std::vector<std::string> mons_;
     std::vector<std::pair<unsigned, unsigned>> pos_;
 
     std::pair<double, double> getForce(const std::pair<unsigned, unsigned>& start, const std::pair<unsigned, unsigned>& end) const;

@@ -5,8 +5,8 @@ int main(){
     std::string teamFile = "/workspaces/CS-225-Team-NMB-Final-Project/gen8ou-1825-moveset.txt";
     std::string usageFile = "/workspaces/CS-225-Team-NMB-Final-Project/gen8ou-1825-usage.txt";
     TeamMaker* tm = new TeamMaker(teamFile, usageFile); 
-
     
+
     // std::vector<std::tuple<std::string, std::map<std::string, double>, double>> teammates = tm->teammatesParser(teamFile);
     // for (auto entry:teammates) {
     //     std::string name = std::get<0>(entry);
