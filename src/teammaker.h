@@ -54,16 +54,16 @@ class TeamMaker{
 
 class graph {
 public: 
-std::vector<std::vector<int>> adjMatrix;
-
+std::vector<std::vector<std::string>> all_pokemon_with_neighbor;
+std::map<std::string, std::vector<std::string>> adjList; 
 
 graph(TeamMaker* teammate, const std::string& pokemons) {
 std::vector<std::string> team = teammate->generateTeam(pokemons);
-std::vector<std::vector<std::string>> all_pokemon_with_neighbor;
+// std::vector<std::vector<std::string>> all_pokemon_with_neighbor;
 std::vector<std::string> pokemon_with_neighbor;
-//used to get the neighbors for the pokemons in the team. 
+// used to get the neighbors for the pokemons in the team. 
 // first, get the index of the pokemon from index[pokemon], then do teammates[index] to get a map of the neighbours 
-//create the 2d vector that holds the pokemon and its neighbors
+// create the 2d vector that holds the pokemon and its neighbors
 for(unsigned int i = 0; i < team.size(); i++) {
     std::string current_pokemon = team.at(i);
     pokemon_with_neighbor.push_back(current_pokemon);
@@ -74,11 +74,23 @@ for(unsigned int i = 0; i < team.size(); i++) {
     // for(int j =0 ; j < neighbor.size();j++) {
     //   pokemon_with_neighbor.push_back(neighbor.at(j));
     // }
-    for(auto x : neighbors) {
-        pokemon_with_neighbor.push_back(teammate->mons_[x.first]);
-    }
-    all_pokemon_with_neighbor.push_back(pokemon_with_neighbor);
+      for(auto x : neighbors) {
+          pokemon_with_neighbor.push_back(teammate->mons_[x.first]);
+      }
+      all_pokemon_with_neighbor.push_back(pokemon_with_neighbor);
   // push pokemon_with_neightbor into al_pokemon_with_neighbor
-    pokemon_with_neighbor.clear();
+      pokemon_with_neighbor.clear();
+      }
+    
+
+for (unsigned i = 0; i < all_pokemon_with_neighbor.size(); i++) {
+  std::vector<std::string> temp; 
+  for (unsigned j = 1; j < all_pokemon_with_neighbor.at(i).size(); j++) {
+    // first thing in the row is the key ,the rest are being oushed into a vector
+    temp.push_back(all_pokemon_with_neighbor[i][j]);
+  }
+  // add into the map
+  adjList[all_pokemon_with_neighbor[i][0]] = temp;
+}
 }
 };
