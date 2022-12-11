@@ -52,33 +52,33 @@ class TeamMaker{
     std::vector<unsigned> pokemonsToVector(const std::string& str);
 };
 
-class graph {
-public: 
-std::vector<std::vector<int>> adjMatrix;
+// class graph {
+// public: 
+// std::vector<std::vector<int>> adjMatrix;
 
 
-graph(TeamMaker* teammate, const std::string& pokemons) {
-std::vector<std::string> team = teammate->generateTeam(pokemons);
-std::vector<std::vector<std::string>> all_pokemon_with_neighbor;
-std::vector<std::string> pokemon_with_neighbor;
-//used to get the neighbors for the pokemons in the team. 
-// first, get the index of the pokemon from index[pokemon], then do teammates[index] to get a map of the neighbours 
-//create the 2d vector that holds the pokemon and its neighbors
-for(unsigned int i = 0; i < team.size(); i++) {
-    std::string current_pokemon = team.at(i);
-    pokemon_with_neighbor.push_back(current_pokemon);
-    // how to find the neighbor 
-    // run through a loop, then push it back to pokemon_with_neighbor
-    auto currIdx = teammate->index_[current_pokemon];
-    auto neighbors = teammate->teammates_[currIdx];
-    // for(int j =0 ; j < neighbor.size();j++) {
-    //   pokemon_with_neighbor.push_back(neighbor.at(j));
-    // }
-    for(auto x : neighbors) {
-        pokemon_with_neighbor.push_back(teammate->mons_[x.first]);
-    }
-    all_pokemon_with_neighbor.push_back(pokemon_with_neighbor);
-  // push pokemon_with_neightbor into al_pokemon_with_neighbor
-    pokemon_with_neighbor.clear();
-}
-};
+// graph(TeamMaker* teammate, const std::string& pokemons) {
+// std::vector<std::string> team = teammate->generateTeam(pokemons);
+// std::vector<std::vector<std::string>> all_pokemon_with_neighbor;
+// std::vector<std::string> pokemon_with_neighbor;
+// //used to get the neighbors for the pokemons in the team. 
+// // first, get the index of the pokemon from index[pokemon], then do teammates[index] to get a map of the neighbours 
+// //create the 2d vector that holds the pokemon and its neighbors
+// for(unsigned int i = 0; i < team.size(); i++) {
+//     std::string current_pokemon = team.at(i);
+//     pokemon_with_neighbor.push_back(current_pokemon);
+//     // how to find the neighbor 
+//     // run through a loop, then push it back to pokemon_with_neighbor
+//     auto currIdx = teammate->index_[current_pokemon];
+//     auto neighbors = teammate->teammates_[currIdx];
+//     // for(int j =0 ; j < neighbor.size();j++) {
+//     //   pokemon_with_neighbor.push_back(neighbor.at(j));
+//     // }
+//     for(auto x : neighbors) {
+//         pokemon_with_neighbor.push_back(teammate->mons_[x.first]);
+//     }
+//     all_pokemon_with_neighbor.push_back(pokemon_with_neighbor);
+//   // push pokemon_with_neightbor into al_pokemon_with_neighbor
+//     pokemon_with_neighbor.clear();
+// }
+// };
