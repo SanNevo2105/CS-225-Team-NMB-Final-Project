@@ -51,6 +51,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "_deps/catch2-src/CMakeLists.txt"
   "_deps/catch2-src/extras/Catch.cmake"
   "_deps/catch2-src/src/CMakeLists.txt"
+  "../lib/CMakeLists.txt"
   "../src/CMakeLists.txt"
   )
 
@@ -66,6 +67,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/catch2-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/catch2-build/src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "lib/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -103,5 +105,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "_deps/catch2-build/CMakeFiles/NightlyMemCheck.dir/DependInfo.cmake"
   "_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/DependInfo.cmake"
   "_deps/catch2-build/src/CMakeFiles/Catch2.dir/DependInfo.cmake"
+  "lib/CMakeFiles/cs225.dir/DependInfo.cmake"
+  "lib/CMakeFiles/lodepng.dir/DependInfo.cmake"
   "src/CMakeFiles/src.dir/DependInfo.cmake"
   )

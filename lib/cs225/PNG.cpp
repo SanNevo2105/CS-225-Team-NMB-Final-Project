@@ -19,7 +19,7 @@ using std::vector;
 #include <algorithm>
 #include <functional>
 
-#include "lodepng/lodepng.h"
+#include "/workspaces/CS-225-Team-NMB-Final-Project/lib/lodepng/lodepng.h"
 #include "PNG.h"
 #include "RGB_HSL.h"
 

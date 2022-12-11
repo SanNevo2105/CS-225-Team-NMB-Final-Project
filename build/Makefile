@@ -528,6 +528,32 @@ Catch2/fast:
 .PHONY : Catch2/fast
 
 #=============================================================================
+# Target rules for targets named cs225
+
+# Build rule for target.
+cs225: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cs225
+.PHONY : cs225
+
+# fast build rule for target.
+cs225/fast:
+	$(MAKE) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/build
+.PHONY : cs225/fast
+
+#=============================================================================
+# Target rules for targets named lodepng
+
+# Build rule for target.
+lodepng: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lodepng
+.PHONY : lodepng
+
+# fast build rule for target.
+lodepng/fast:
+	$(MAKE) -f lib/CMakeFiles/lodepng.dir/build.make lib/CMakeFiles/lodepng.dir/build
+.PHONY : lodepng/fast
+
+#=============================================================================
 # Target rules for targets named src
 
 # Build rule for target.
@@ -634,6 +660,8 @@ help:
 	@echo "... NightlyMemCheck"
 	@echo "... Catch2WithMain"
 	@echo "... Catch2"
+	@echo "... cs225"
+	@echo "... lodepng"
 	@echo "... src"
 	@echo "... entry/main.o"
 	@echo "... entry/main.i"

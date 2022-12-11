@@ -40,6 +40,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/workspaces/CS-225-Team-NMB-Final-Project/build/_deps/catch2-build/cmake_install.cmake")
+  include("/workspaces/CS-225-Team-NMB-Final-Project/build/lib/cmake_install.cmake")
   include("/workspaces/CS-225-Team-NMB-Final-Project/build/src/cmake_install.cmake")
 
 endif()

@@ -36,6 +36,10 @@
 /workspaces/CS-225-Team-NMB-Final-Project/build/_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
 /workspaces/CS-225-Team-NMB-Final-Project/build/_deps/catch2-build/src/CMakeFiles/rebuild_cache.dir
 /workspaces/CS-225-Team-NMB-Final-Project/build/_deps/catch2-build/src/CMakeFiles/Catch2.dir
+/workspaces/CS-225-Team-NMB-Final-Project/build/lib/CMakeFiles/rebuild_cache.dir
+/workspaces/CS-225-Team-NMB-Final-Project/build/lib/CMakeFiles/edit_cache.dir
+/workspaces/CS-225-Team-NMB-Final-Project/build/lib/CMakeFiles/cs225.dir
+/workspaces/CS-225-Team-NMB-Final-Project/build/lib/CMakeFiles/lodepng.dir
 /workspaces/CS-225-Team-NMB-Final-Project/build/src/CMakeFiles/rebuild_cache.dir
 /workspaces/CS-225-Team-NMB-Final-Project/build/src/CMakeFiles/edit_cache.dir
 /workspaces/CS-225-Team-NMB-Final-Project/build/src/CMakeFiles/src.dir

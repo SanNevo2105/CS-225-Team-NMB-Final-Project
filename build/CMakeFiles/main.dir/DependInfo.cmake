@@ -10,12 +10,15 @@ set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../lib"
   "../src"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/workspaces/CS-225-Team-NMB-Final-Project/build/src/CMakeFiles/src.dir/DependInfo.cmake"
+  "/workspaces/CS-225-Team-NMB-Final-Project/build/lib/CMakeFiles/cs225.dir/DependInfo.cmake"
+  "/workspaces/CS-225-Team-NMB-Final-Project/build/lib/CMakeFiles/lodepng.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -7,7 +7,6 @@
 #include <cassert>
 #include <cstring>
 #include <algorithm>
-#include <set>
 #include <cmath>
 
 TeamMaker::TeamMaker(const std::string& teamFile, const std::string& usageFile){
@@ -421,20 +420,19 @@ std::vector<unsigned> TeamMaker::pokemonsToVector(const std::string& str) {
     return teamVec;
 }
 
-std::map<std::string, std::vector<std::string>> TeamMaker::getAdjList(std::vector<std::string> team) {
+std::map<std::string, std::set<std::string>> TeamMaker::getAdjList(std::vector<std::string> team) {
     std::set<unsigned> pkmnSet;
     for (auto m:team) {
         pkmnSet.insert(index_[m]);
     }
-    std::map<std::string, std::vector<std::string>> adjList;
+    std::map<std::string, std::set<std::string>> adjList;
     for (auto p:pkmnSet) {
-        std::vector<std::string> neighbours;
         for (auto n:teammates_[p]) {
-            if (pkmnSet.find(n.first) != pkmnSet.end()) {
-                neighbours.push_back(mons_[n.first]);
-            }
+            //if (pkmnSet.find(n.first) != pkmnSet.end()) {
+                adjList[mons_[n.first]].insert(mons_[p]);
+                adjList[mons_[p]].insert(mons_[n.first]);
+            //}
         }
-        adjList[mons_[p]] = neighbours;
     }
     return adjList;
 }

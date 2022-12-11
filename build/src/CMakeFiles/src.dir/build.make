@@ -57,48 +57,35 @@ include src/CMakeFiles/src.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/src.dir/flags.make
 
-src/CMakeFiles/src.dir/cs225/HSLAPixel.cpp.o: src/CMakeFiles/src.dir/flags.make
-src/CMakeFiles/src.dir/cs225/HSLAPixel.cpp.o: ../src/cs225/HSLAPixel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/src.dir/cs225/HSLAPixel.cpp.o"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/cs225/HSLAPixel.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/cs225/HSLAPixel.cpp
+src/CMakeFiles/src.dir/Image.cpp.o: src/CMakeFiles/src.dir/flags.make
+src/CMakeFiles/src.dir/Image.cpp.o: ../src/Image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/src.dir/Image.cpp.o"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/Image.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/Image.cpp
 
-src/CMakeFiles/src.dir/cs225/HSLAPixel.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/cs225/HSLAPixel.cpp.i"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS-225-Team-NMB-Final-Project/src/cs225/HSLAPixel.cpp > CMakeFiles/src.dir/cs225/HSLAPixel.cpp.i
+src/CMakeFiles/src.dir/Image.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/Image.cpp.i"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS-225-Team-NMB-Final-Project/src/Image.cpp > CMakeFiles/src.dir/Image.cpp.i
 
-src/CMakeFiles/src.dir/cs225/HSLAPixel.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/cs225/HSLAPixel.cpp.s"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS-225-Team-NMB-Final-Project/src/cs225/HSLAPixel.cpp -o CMakeFiles/src.dir/cs225/HSLAPixel.cpp.s
+src/CMakeFiles/src.dir/Image.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/Image.cpp.s"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS-225-Team-NMB-Final-Project/src/Image.cpp -o CMakeFiles/src.dir/Image.cpp.s
 
-src/CMakeFiles/src.dir/cs225/PNG.cpp.o: src/CMakeFiles/src.dir/flags.make
-src/CMakeFiles/src.dir/cs225/PNG.cpp.o: ../src/cs225/PNG.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/src.dir/cs225/PNG.cpp.o"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/cs225/PNG.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/cs225/PNG.cpp
+src/CMakeFiles/src.dir/StickerSheet.cpp.o: src/CMakeFiles/src.dir/flags.make
+src/CMakeFiles/src.dir/StickerSheet.cpp.o: ../src/StickerSheet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/src.dir/StickerSheet.cpp.o"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/StickerSheet.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/StickerSheet.cpp
 
-src/CMakeFiles/src.dir/cs225/PNG.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/cs225/PNG.cpp.i"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS-225-Team-NMB-Final-Project/src/cs225/PNG.cpp > CMakeFiles/src.dir/cs225/PNG.cpp.i
+src/CMakeFiles/src.dir/StickerSheet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/StickerSheet.cpp.i"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS-225-Team-NMB-Final-Project/src/StickerSheet.cpp > CMakeFiles/src.dir/StickerSheet.cpp.i
 
-src/CMakeFiles/src.dir/cs225/PNG.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/cs225/PNG.cpp.s"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS-225-Team-NMB-Final-Project/src/cs225/PNG.cpp -o CMakeFiles/src.dir/cs225/PNG.cpp.s
-
-src/CMakeFiles/src.dir/cs225/textfile.cpp.o: src/CMakeFiles/src.dir/flags.make
-src/CMakeFiles/src.dir/cs225/textfile.cpp.o: ../src/cs225/textfile.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/src.dir/cs225/textfile.cpp.o"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/cs225/textfile.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/cs225/textfile.cpp
-
-src/CMakeFiles/src.dir/cs225/textfile.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/cs225/textfile.cpp.i"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS-225-Team-NMB-Final-Project/src/cs225/textfile.cpp > CMakeFiles/src.dir/cs225/textfile.cpp.i
-
-src/CMakeFiles/src.dir/cs225/textfile.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/cs225/textfile.cpp.s"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS-225-Team-NMB-Final-Project/src/cs225/textfile.cpp -o CMakeFiles/src.dir/cs225/textfile.cpp.s
+src/CMakeFiles/src.dir/StickerSheet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/StickerSheet.cpp.s"
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS-225-Team-NMB-Final-Project/src/StickerSheet.cpp -o CMakeFiles/src.dir/StickerSheet.cpp.s
 
 src/CMakeFiles/src.dir/graph.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/graph.cpp.o: ../src/graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/src.dir/graph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/src.dir/graph.cpp.o"
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/graph.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/graph.cpp
 
 src/CMakeFiles/src.dir/graph.cpp.i: cmake_force
@@ -109,22 +96,9 @@ src/CMakeFiles/src.dir/graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph.cpp.s"
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS-225-Team-NMB-Final-Project/src/graph.cpp -o CMakeFiles/src.dir/graph.cpp.s
 
-src/CMakeFiles/src.dir/lodepng/lodepng.cpp.o: src/CMakeFiles/src.dir/flags.make
-src/CMakeFiles/src.dir/lodepng/lodepng.cpp.o: ../src/lodepng/lodepng.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/src.dir/lodepng/lodepng.cpp.o"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/lodepng/lodepng.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/lodepng/lodepng.cpp
-
-src/CMakeFiles/src.dir/lodepng/lodepng.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/lodepng/lodepng.cpp.i"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/CS-225-Team-NMB-Final-Project/src/lodepng/lodepng.cpp > CMakeFiles/src.dir/lodepng/lodepng.cpp.i
-
-src/CMakeFiles/src.dir/lodepng/lodepng.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/lodepng/lodepng.cpp.s"
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS-225-Team-NMB-Final-Project/src/lodepng/lodepng.cpp -o CMakeFiles/src.dir/lodepng/lodepng.cpp.s
-
 src/CMakeFiles/src.dir/teammaker.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/teammaker.cpp.o: ../src/teammaker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/src.dir/teammaker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/src.dir/teammaker.cpp.o"
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src.dir/teammaker.cpp.o -c /workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.cpp
 
 src/CMakeFiles/src.dir/teammaker.cpp.i: cmake_force
@@ -137,25 +111,21 @@ src/CMakeFiles/src.dir/teammaker.cpp.s: cmake_force
 
 # Object files for target src
 src_OBJECTS = \
-"CMakeFiles/src.dir/cs225/HSLAPixel.cpp.o" \
-"CMakeFiles/src.dir/cs225/PNG.cpp.o" \
-"CMakeFiles/src.dir/cs225/textfile.cpp.o" \
+"CMakeFiles/src.dir/Image.cpp.o" \
+"CMakeFiles/src.dir/StickerSheet.cpp.o" \
 "CMakeFiles/src.dir/graph.cpp.o" \
-"CMakeFiles/src.dir/lodepng/lodepng.cpp.o" \
 "CMakeFiles/src.dir/teammaker.cpp.o"
 
 # External object files for target src
 src_EXTERNAL_OBJECTS =
 
-src/libsrc.a: src/CMakeFiles/src.dir/cs225/HSLAPixel.cpp.o
-src/libsrc.a: src/CMakeFiles/src.dir/cs225/PNG.cpp.o
-src/libsrc.a: src/CMakeFiles/src.dir/cs225/textfile.cpp.o
+src/libsrc.a: src/CMakeFiles/src.dir/Image.cpp.o
+src/libsrc.a: src/CMakeFiles/src.dir/StickerSheet.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/graph.cpp.o
-src/libsrc.a: src/CMakeFiles/src.dir/lodepng/lodepng.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/teammaker.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/build.make
 src/libsrc.a: src/CMakeFiles/src.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libsrc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libsrc.a"
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean_target.cmake
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src.dir/link.txt --verbose=$(VERBOSE)
 

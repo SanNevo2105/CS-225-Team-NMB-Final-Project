@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/src.dir/cs225/HSLAPixel.cpp.o"
-  "CMakeFiles/src.dir/cs225/PNG.cpp.o"
-  "CMakeFiles/src.dir/cs225/textfile.cpp.o"
+  "CMakeFiles/src.dir/Image.cpp.o"
+  "CMakeFiles/src.dir/StickerSheet.cpp.o"
   "CMakeFiles/src.dir/graph.cpp.o"
-  "CMakeFiles/src.dir/lodepng/lodepng.cpp.o"
   "CMakeFiles/src.dir/teammaker.cpp.o"
   "libsrc.a"
   "libsrc.pdb"

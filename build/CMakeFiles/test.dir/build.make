@@ -82,6 +82,8 @@ test: CMakeFiles/test.dir/build.make
 test: _deps/catch2-build/src/libCatch2Main.a
 test: src/libsrc.a
 test: _deps/catch2-build/src/libCatch2.a
+test: lib/libcs225.a
+test: lib/liblodepng.a
 test: CMakeFiles/test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CS-225-Team-NMB-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)

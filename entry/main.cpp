@@ -6,21 +6,31 @@ int main(){
     std::string teamFile = "/workspaces/CS-225-Team-NMB-Final-Project/gen8ou-1825-moveset.txt";
     std::string usageFile = "/workspaces/CS-225-Team-NMB-Final-Project/gen8ou-1825-usage.txt";
     TeamMaker* tm = new TeamMaker(teamFile, usageFile); 
-    double length =10;
+    double length =150;
     double threshold = 0; 
     unsigned limit = 10000;
-    double cooling = 0.90;
-    std::vector<std::string> team = tm->generateTeam("Marowak-Alola, slowbro");
-    std::map<std::string, std::vector<std::string>> adjList = tm->getAdjList(team);
+    double cooling = 0.70;
+    std::string teamStr;
+    std::cout << "Inputs: ";
+    std::cin >> teamStr;
+    std::vector<std::string> team = tm->generateTeam(teamStr);
+    std::map<std::string, std::set<std::string>> adjList = tm->getAdjList(team);
+    // for (auto p : adjList) {
+    //     std::cout << p.first << ": ";
+    //     for (auto m:p.second) {
+    //         std::cout << m << ", ";
+    //     }
+    //     std::cout << std::endl;
+    // }
     Graph g = Graph(adjList, length, threshold, limit, cooling);
     std::vector<std::pair<unsigned, unsigned>> pos = g.getPos();
-    for (auto p:pos) {
-        std::cout << p.first << ", " << p.second << std::endl;
-    }
+    // for (auto p:pos) {
+    //     std::cout << p.first << ", " << p.second << std::endl;
+    // }
 
-    cs225::PNG image;
+    Image image;
     image.readFromFile("../White_full.png");
-    cs225::PNG output = g.drawImage(image);
+    Image output = g.drawImage(image, team);
     output.writeToFile("../output.png");
 
     // std::vector<std::tuple<std::string, std::map<std::string, double>, double>> teammates = tm->teammatesParser(teamFile);

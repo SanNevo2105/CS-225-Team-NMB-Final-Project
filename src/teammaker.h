@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <set>
 #include <tuple>
 
 class TeamMaker{
@@ -50,7 +51,7 @@ class TeamMaker{
   
     //helper function for generateTeam for turning a string of pokemon names to a vector of pokemons
     std::vector<unsigned> pokemonsToVector(const std::string& str);
-    std::map<std::string, std::vector<std::string>> getAdjList(std::vector<std::string> team);
+    std::map<std::string, std::set<std::string>> getAdjList(std::vector<std::string> team);
 };
 
 // class graph {

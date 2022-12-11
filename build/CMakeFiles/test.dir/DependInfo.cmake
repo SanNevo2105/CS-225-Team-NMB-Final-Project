@@ -11,6 +11,7 @@ set(CMAKE_CXX_COMPILER_ID "Clang")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "_deps/catch2-src/src/catch2/.."
+  "../lib"
   "../src"
   )
 
@@ -19,6 +20,8 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/workspaces/CS-225-Team-NMB-Final-Project/build/_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/DependInfo.cmake"
   "/workspaces/CS-225-Team-NMB-Final-Project/build/src/CMakeFiles/src.dir/DependInfo.cmake"
   "/workspaces/CS-225-Team-NMB-Final-Project/build/_deps/catch2-build/src/CMakeFiles/Catch2.dir/DependInfo.cmake"
+  "/workspaces/CS-225-Team-NMB-Final-Project/build/lib/CMakeFiles/cs225.dir/DependInfo.cmake"
+  "/workspaces/CS-225-Team-NMB-Final-Project/build/lib/CMakeFiles/lodepng.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

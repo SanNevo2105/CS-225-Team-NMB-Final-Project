@@ -6,17 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/workspaces/CS-225-Team-NMB-Final-Project/src/cs225/HSLAPixel.h
+/workspaces/CS-225-Team-NMB-Final-Project/lib/cs225/HSLAPixel.h
 iostream
 -
 sstream
 -
 
-/workspaces/CS-225-Team-NMB-Final-Project/src/cs225/PNG.h
+/workspaces/CS-225-Team-NMB-Final-Project/lib/cs225/PNG.h
 string
 -
 HSLAPixel.h
-/workspaces/CS-225-Team-NMB-Final-Project/src/cs225/HSLAPixel.h
+/workspaces/CS-225-Team-NMB-Final-Project/lib/cs225/HSLAPixel.h
+
+/workspaces/CS-225-Team-NMB-Final-Project/src/Image.h
+/workspaces/CS-225-Team-NMB-Final-Project/lib/cs225/PNG.h
+-
+
+/workspaces/CS-225-Team-NMB-Final-Project/src/StickerSheet.h
+Image.h
+/workspaces/CS-225-Team-NMB-Final-Project/src/Image.h
 
 /workspaces/CS-225-Team-NMB-Final-Project/src/graph.cpp
 graph.h
@@ -31,8 +39,12 @@ string
 -
 vector
 -
+set
+-
 map
 -
-cs225/PNG.h
-/workspaces/CS-225-Team-NMB-Final-Project/src/cs225/PNG.h
+StickerSheet.h
+/workspaces/CS-225-Team-NMB-Final-Project/src/StickerSheet.h
+/workspaces/CS-225-Team-NMB-Final-Project/lib/cs225/PNG.h
+-
 

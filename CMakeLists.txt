@@ -7,6 +7,7 @@ set(assignment_entrypoints "main") # Entrypoints to run the program
 set(assignment_clean_rm "") # Generated files that should be removed with "make clean"
 set(assignment_container "fa22") # Container we are targetting
 
+
 # Add color support to our messages.
 # See: https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
 if(NOT WIN32)
@@ -94,7 +95,7 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function")
 
 # Specify debug symbols and no optimizations for Debug builds.
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_GLIBCXX_DEBUG -O0 -gdwarf-4")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_GLIBCXX_DEBUG -O0 -g")
 
 # Specify additional clean files.
 set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${assignment_clean_rm}")
@@ -105,34 +106,27 @@ set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${assignment_clea
 # if(NOT DEFINED EWS)
 #     find_package(Catch2 REQUIRED)
 # else()
-#     include(FetchContent)
+    include(FetchContent)
 
-#     FetchContent_Declare(
-#         Catch2
-#         GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-#         GIT_TAG        v3.0.0-preview3
-#     )
+    FetchContent_Declare(
+        Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG        v3.0.0-preview3
+    )
 
-#     FetchContent_MakeAvailable(Catch2)
+    FetchContent_MakeAvailable(Catch2)
 
-#     list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
+    list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 # endif()
-include(FetchContent)
 
-FetchContent_Declare(
-    Catch2
-    GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-    GIT_TAG        v3.0.0-preview3
-)
-
-FetchContent_MakeAvailable(Catch2)
-
-list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 # Path definitions.
+set(lib_dir ${CMAKE_SOURCE_DIR}/lib)
 set(src_dir ${CMAKE_SOURCE_DIR}/src)
 set(tests_dir ${CMAKE_SOURCE_DIR}/tests)
 set(entry_dir ${CMAKE_SOURCE_DIR}/entry)
 
+# Run CMakeLists in lib_dir to build our required libraries.
+add_subdirectory(${lib_dir})
 
 # Run CMakeLists in src_dir to build the student's code.
 add_subdirectory(${src_dir})
@@ -143,12 +137,12 @@ file(GLOB_RECURSE tests_src CONFIGURE_DEPENDS ${tests_dir}/*.cpp)
 include(Catch)
 
 add_executable(test ${tests_src})
-target_link_libraries(test PRIVATE Catch2::Catch2WithMain src)
+target_link_libraries(test PRIVATE Catch2::Catch2WithMain libs src)
 
 catch_discover_tests(test)
 
 # Add the assignment entrypoints using our libs and src code.
 foreach(entrypoint IN LISTS assignment_entrypoints)
     add_executable(${entrypoint} ${entry_dir}/${entrypoint}.cpp)
-    target_link_libraries(${entrypoint} PRIVATE src)
+    target_link_libraries(${entrypoint} PRIVATE libs src)
 endforeach()
