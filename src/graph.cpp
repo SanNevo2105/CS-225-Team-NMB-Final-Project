@@ -2,42 +2,6 @@
 #include <cmath>
 #include <assert.h>
 
-// graph(TeamMaker* teammate, const std::string& pokemons) {
-// std::vector<std::string> team = teammate->generateTeam(pokemons);
-// std::vector<std::vector<std::string>> all_pokemon_with_neighbor;
-// std::vector<std::string> pokemon_with_neighbor;
-// //used to get the neighbors for the pokemons in the team. 
-// // first, get the index of the pokemon from index[pokemon], then do teammates[index] to get a map of the neighbours 
-// //create the 2d vector that holds the pokemon and its neighbors
-// for(unsigned int i = 0; i < team.size(); i++) {
-//     std::string current_pokemon = team.at(i);
-//     pokemon_with_neighbor.push_back(current_pokemon);
-//     // how to find the neighbor 
-//     // run through a loop, then push it back to pokemon_with_neighbor
-//     auto currIdx = teammate->index_[current_pokemon];
-//     auto neighbors = teammate->teammates_[currIdx];
-//     // for(int j =0 ; j < neighbor.size();j++) {
-//     //   pokemon_with_neighbor.push_back(neighbor.at(j));
-//     // }
-//     for(auto x : neighbors) {
-//         pokemon_with_neighbor.push_back(teammate->mons_[x.first]);
-//     }
-//     all_pokemon_with_neighbor.push_back(pokemon_with_neighbor);
-//   // push pokemon_with_neightbor into al_pokemon_with_neighbor
-//     pokemon_with_neighbor.clear();
-// }
-
-// // populate the matrix to how it should be 
-// // set of pokemons inside the all_pokemon_with_neighbor, and include everything in the team
-//  for(int i = 0; i < all_pokemon_with_neighbor.size(); i++) {
-//       for(int j = 0; j < all_pokemon_with_neighbor.at(i).size(); j++) {
-//         // We know that the result from generated team are for sure neighbors && we know that 
-//         // first 6 element in all_pokemon_with_neighbot[0][j] are neighbors
-//           std::vector<int> inner;
-//        }
-//     }  
-// }
-
 Graph::Graph(std::map<std::string, std::vector<std::string>>& adjList, double length, double threshold, unsigned limit, double cooling)
 : length_(length), threshold_(threshold), limit_(limit), cooling_(cooling){
     std::map<std::string, unsigned> indexes;
@@ -67,33 +31,34 @@ Graph::Graph(std::map<std::string, std::vector<std::string>>& adjList, double le
 }
 
 cs225::PNG & Graph::drawImage(cs225::PNG & pic){
-    std::vector<unsigned> x_axis;
-    std::vector<unsigned> y_axis;
+    std::vector<int> x_axis;
+    std::vector<int> y_axis;
     for(auto p: pos_){
         x_axis.push_back(p.first);
         y_axis.push_back(p.second);
     }
      //randomly assign coordinate to these pokemons
-    std::vector<unsigned> length_for_layer = {6,5,4,3,2,1};
+    std::vector<int> length_for_layer = {6,5,4,3,2,1};
     //HSLAPixel & cur_pixel = HSLAPixel();
-    for(size_t i = 0; i < 54; i ++){                         //draw these pokemons first;
+    for(size_t i = 0; i < graph_.size(); i ++){                         //draw these pokemons first;
         pic.getPixel(x_axis[i], y_axis[i]).l = 0;
         //cur_pixel.l = 0;   
-        for(unsigned k = 1; k < 7; k ++){
+        for(int k = 1; k < 7; k ++){
             if(x_axis[i]+k <= 1800){
-                for(unsigned w = length_for_layer[k - 1]; w > 0; w-- ){
+                for(int w = length_for_layer[k - 1]; w > 0; w-- ){
                     if(y_axis[i]+w <= 1200){
                         pic.getPixel(x_axis[i]+k, y_axis[i]+w).l = 0;
                     }
                     if(y_axis[i]-w > 0){
                         pic.getPixel(x_axis[i]+k, y_axis[i]-w).l = 0;
+                       
                     }
                 }
                 pic.getPixel(x_axis[i]+k, y_axis[i]).l = 0;
             }
 
             if(x_axis[i]-k > 0){
-                for(unsigned w = length_for_layer[k - 1]; w > 0; w-- ){
+                for(int w = length_for_layer[k - 1]; w > 0; w-- ){
                     if(y_axis[i]-w > 0){
                         pic.getPixel(x_axis[i]-k, y_axis[i]-w).l = 0;
                     }
@@ -118,7 +83,7 @@ cs225::PNG & Graph::drawImage(cs225::PNG & pic){
             //HSLAPixel & target_pixel = pic.getPixel(x_axis[j], y_axis[j]);
             size_t start_x = x_axis[i];
             size_t start_y = y_axis[i];
-            unsigned y_diff, x_diff;
+            int y_diff, x_diff;
             if(y_axis[i] > y_axis[j]){
                 y_diff = (y_axis[i] - y_axis[j]);
             }
@@ -134,9 +99,9 @@ cs225::PNG & Graph::drawImage(cs225::PNG & pic){
                 x_diff = (x_axis[j] - x_axis[i]);     
             }
                 
-            unsigned A = 2 * y_diff;
-            unsigned B = A - 2 * x_diff;
-            unsigned P = A - x_diff;
+            int A = 2 * y_diff;
+            int B = A - 2 * x_diff;
+            int P = A - x_diff;
             size_t final_x = start_x + x_diff;
             for(size_t i=start_x; i < final_x; i ++){
                 if(P < 0){
@@ -172,20 +137,27 @@ line from A to B:*/
 }
 
 std::vector<std::pair<unsigned, unsigned>> Graph::pos(){
-    std::vector<std::pair<unsigned, unsigned>> output;
+    std::vector<std::pair<double, double>> output;
     //1800, 1200
+    //std::cout << "size: " << graph_.size() << std::endl;
     for (unsigned i = 0; i < graph_.size(); i++) {
-        output.push_back(std::make_pair(i, std::pow(i, 0.5)));
+        double x = rand() % 1800;
+        double y = rand() % 1200;
+        output.push_back(std::make_pair(x, y));
     }
     unsigned t = 0;
+    double xNeg = 0;
+    double yNeg = 0;
     while (t < limit_) {
         //std::cout << "enter loop" << std::endl;
         double maxForce = 0;
-        std::vector<std::pair<unsigned, unsigned>> temp(graph_.size());
+        xNeg = 0;
+        yNeg = 0;
+        std::vector<std::pair<double, double>> temp;
         for (unsigned start = 0; start < graph_.size(); start++) {
             double xForce = 0;
             double yForce = 0;
-            std::cout << graph_[start].size() << std::endl;
+            //std::cout << graph_[start].size() << std::endl;
             for (auto end: graph_[start]) {
                 //std::cout << "end: " << end << std::endl;
                 std::pair<double, double> force = getForce(output[start], output[end]);
@@ -193,27 +165,46 @@ std::vector<std::pair<unsigned, unsigned>> Graph::pos(){
                 //std::cout << "end: " << output[end].first << ", " << output[end].second << std::endl;
                 xForce += force.first;
                 yForce += force.second;
-                std::cout << "force: " << force.first << ", " << force.second << std::endl;
+                //std::cout << "force: " << force.first << ", " << force.second << std::endl;
             }
             double mag = getMag(xForce, yForce);
             if (mag > maxForce) {
                 maxForce = mag;
             }
             //std::cout << mag << std::endl;
-            unsigned xPos = output[start].first + (cooling_*xForce);
-            unsigned yPos = output[start].second + (cooling_*yForce);
+            double xPos = output[start].first + (cooling_*xForce);
+            double yPos = output[start].second + (cooling_*yForce);
+            if (xPos < xNeg) {
+                xNeg = xPos;
+            }
+            if (yPos < yNeg) {
+                yNeg = yPos;
+            }
             temp.push_back(std::make_pair(xPos, yPos));
         }
         output = temp;
         if (maxForce < threshold_) {
             break;
         }
+        //break;
         t++;
-        break;
     }
     std::vector<std::pair<unsigned, unsigned>> result;
-    for (auto p: output) {
-        result.push_back(std::make_pair(p.first * 22, p.second * 22));
+    double multiplier = 1;
+    for (unsigned i = 0; i < output.size(); i++) {
+        auto p = output[i];
+        output[i]=std::make_pair(p.first - xNeg, p.second - yNeg);
+        if (1500/(p.first - xNeg) < multiplier) {
+            multiplier = 1500/(p.first - xNeg);
+        }
+        if (1000/(p.second - yNeg) < multiplier) {
+            multiplier = 1000/(p.second - yNeg);
+        }
+    }
+    //std::cout << "multiplier: " << multiplier << std::endl;
+    for (auto p:output) {
+        result.push_back(std::make_pair(100+p.first * multiplier, 50+p.second * multiplier));
+        //std::cout << p.first * multiplier << ", " << p.second * multiplier << std::endl;
     }
     return result;
 }
@@ -223,6 +214,9 @@ std::vector<std::pair<unsigned, unsigned>> Graph::getPos() const{
 
 std::pair<double, double> Graph::getForce(const std::pair<unsigned, unsigned>& start, const std::pair<unsigned, unsigned>& end) const{
     double distance = getDistance(start, end);
+    if (distance == 0) {
+        return std::make_pair(0, 0);
+    }
     std::pair<double, double> unitVec = getUnitVec(start, end, distance);
     std::pair<double, double> rep = getRep(unitVec, distance);
     std::pair<double, double> attr = getAttr(unitVec, distance);
@@ -238,14 +232,14 @@ std::pair<double, double> Graph::getAttr(const std::pair<double, double>& unitVe
 }
 
 double Graph::getDistance(const std::pair<unsigned, unsigned>& start, const std::pair<unsigned, unsigned>& end) const{
-    std::cout << "start: " << start.first << ", " << start.second << std::endl;
-    std::cout << "end: " << start.first << std::endl;
+    //std::cout << "start: " << start.first << ", " << start.second << std::endl;
+    //std::cout << "end: " << end.first << ", " << end.second << std::endl;
     
-    unsigned x = start.first - end.first;
-    unsigned y = start.second - end.second;
-    std::cout << "x: " << x << ", y: " << y << std::endl;
+    int x = start.first - end.first;
+    int y = start.second - end.second;
+    //std::cout << "x: " << x << ", y: " << y << std::endl;
     double distance = getMag(x, y);
-    assert(distance > 0);
+    //assert(distance > 0);
     return distance;
 }
 double Graph::getMag(double x, double y) const {

@@ -44,34 +44,37 @@ TEST_CASE("Floyd-warshall", "[fw]") {
     //use 2.22045e-016
     //Dragapult's entries
     std::cout << tm->weights_[1][0] << " compared to " << 0.57344 << std::endl;
-    assert(unsigned(tm->weights_[1][0] * 100000) == 57344);
-    assert(tm->weights_[1][1] == 1);
-    assert(tm->weights_[1][2] == 0.28261);
+    assert(std::abs(tm->weights_[1][0] * 100000) - 57344 < EPSILON);
+    assert(std::abs(tm->weights_[1][1] - 1) < EPSILON);
+    assert(std::abs(tm->weights_[1][2] - 0.28261) < EPSILON);
     std::cout << std::to_string(tm->weights_[1][3]) << " compared to " << "0.14649" << std::endl;
-    assert(tm->weights_[1][3] == 0.146490);
-    assert(tm->weights_[1][4] == 0);
+    assert(std::abs(tm->weights_[1][3] - 0.146490) < EPSILON);
+    assert(std::abs(tm->weights_[1][4] - 0) < EPSILON);
 
     //Heatran's entries
-    assert(tm->weights_[2][0] == 0.73876);
-    assert(tm->weights_[2][1] == 0.33338);
-    assert(tm->weights_[2][2] == 1);
-    assert(unsigned(tm->weights_[2][3] * 1000000) == unsigned(std::pow(0.14649 * 0.33338, 4) * 1000000));
-    assert(tm->weights_[2][4] == 0);
+    assert(std::abs(tm->weights_[2][0] - 0.73876) < EPSILON);
+    assert(std::abs(tm->weights_[2][1] - 0.33338) < EPSILON);
+    assert(std::abs(tm->weights_[2][2] - 1) < EPSILON);
+    assert(std::abs(tm->weights_[2][3] - std::pow(0.14649 * 0.33338, 4)) < EPSILON);
+    assert(std::abs(tm->weights_[2][4] - 0) < EPSILON);
 
     //Clefable's entries
-    assert(tm->weights_[3][0] == 0.31143);
-    assert(tm->weights_[3][1] == 0.24477);
-    assert(tm->weights_[3][2] == 0.24534);
-    assert(tm->weights_[3][3] == 1);
-    assert(tm->weights_[3][4] == 0);
+    assert(std::abs(tm->weights_[3][0] - 0.31143) < EPSILON);
+    assert(std::abs(tm->weights_[3][1] - 0.24477) < EPSILON);
+    assert(std::abs(tm->weights_[3][2] - 0.24534) < EPSILON);
+    assert(std::abs(tm->weights_[3][3] - 1) < EPSILON);
+    assert(std::abs(tm->weights_[3][4] - 0) < EPSILON);
 
     //Crobat's entries
     for (unsigned i = 0; i < 4; i++) {
         assert(tm->teammates_[i].find(4) == tm->teammates_[i].end());
         assert(tm->teammates_[4].find(i) == tm->teammates_[4].end());
-        assert(tm->weights_[i][4] == 0);
+        assert(std::abs(tm->weights_[i][4] - 0) < EPSILON);
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> fc4a8c2050b8d9864fb345a6ad04d27aa1c34a03
 }
 
 TEST_CASE("depthfirstsearch", "[dfs]") {
