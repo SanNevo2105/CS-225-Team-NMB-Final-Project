@@ -19,6 +19,7 @@ TEST_CASE("Parsingdataset", "[parsing]") {
 }
 
 TEST_CASE("Floyd-warshall", "[fw]") {
+    const double EPSILON = std::pow(2.22045, -16);
     std::string teamFile = "/workspaces/CS-225-Team-NMB-Final-Project/test-moveset.txt";
     std::string usageFile = "/workspaces/CS-225-Team-NMB-Final-Project/test-usage.txt";
     TeamMaker* tm = new TeamMaker(teamFile, usageFile); 
@@ -33,13 +34,13 @@ TEST_CASE("Floyd-warshall", "[fw]") {
     assert(tm->mons_[4] == "crobat");
 
     //Lando's entries
-    assert(tm->weights_[0][0] == 1);
-    assert(tm->weights_[0][1] == 0.36741);
-    assert(tm->weights_[0][2] == 0.40126);
+    assert(std::abs(tm->weights_[0][0]-1) < EPSILON);
+    assert(std::abs(tm->weights_[0][1]-0.36741) < EPSILON);
+    assert(std::abs(tm->weights_[0][2]-0.40126) < EPSTLON);
     std::cout << tm->weights_[0][3] << " compared to " << std::pow(0.14649 * 0.36741, 4) << std::endl;
-    assert(unsigned(tm->weights_[0][3] * 1000000) == unsigned(std::pow(0.14649 * 0.36741, 4) * 1000000));
-    assert(tm->weights_[0][4] == 0);
-    
+    assert(std::abs(unsigned(tm->weights_[0][3] * 1000000) - unsigned(std::pow(0.14649 * 0.36741, 4) * 1000000)) < EPSILON);
+    assert(std::abs(tm->weights_[0][4]-0) < EPSTLON);
+    /*
     //use 2.22045e-016
     //Dragapult's entries
     std::cout << tm->weights_[1][0] << " compared to " << 0.57344 << std::endl;
@@ -70,5 +71,27 @@ TEST_CASE("Floyd-warshall", "[fw]") {
         assert(tm->teammates_[4].find(i) == tm->teammates_[4].end());
         assert(tm->weights_[i][4] == 0);
     }
+    */
 }
 
+TEST_CASE("depthfirstsearch", "[dfs]") {
+    std::string teamFile = "../test-moveset.txt";
+    std::string usageFile = "../test-usage.txt";
+    TeamMaker* tm = new TeamMaker(teamFile, usageFile); 
+    assert(tm->mons_[0] == "landorus-therian");
+    assert(tm->mons_[1] == "dragapult");
+    assert(tm->mons_[2] == "heatran");
+    assert(tm->mons_[3] == "clefable");
+    assert(tm->mons_[4] == "crobat");
+
+    for(unsigned i=0; i < 4; i ++){
+        for(unsigned j =0; j < 4; j ++ ){
+            if(i != j){
+                assert(TeamMaker::dfs(i, j) == true);
+            }
+        }
+    }
+    for(unsigned i=0; i < 4; i ++){
+        assert(TeamMaker::dfs(4, i) == false);
+    }
+}
