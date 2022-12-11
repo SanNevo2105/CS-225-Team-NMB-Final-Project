@@ -9,7 +9,7 @@ class Graph {
     Graph(std::map<std::string, std::vector<std::string>>& adjList, double length, double threshold, unsigned limit, double cooling);
     std::vector<std::pair<unsigned, unsigned>> pos();
     std::vector<std::pair<unsigned, unsigned>> getPos() const;
-    cs225::PNG & drawImage(cs225::PNG & pic, std::vector<std::pair<unsigned, unsigned>> pos);
+    cs225::PNG & drawImage(cs225::PNG & pic);
   private:
     std::vector<std::vector<unsigned>> graph_;
     double length_;

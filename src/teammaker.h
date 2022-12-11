@@ -29,7 +29,7 @@ class TeamMaker{
     //use helper function pokemonsToVector to turn the string of pokemons into a vector of pokemons
     std::vector<std::string> generateTeam(const std::string& pokemons);
     
-//   private:
+  //private:
     //map mapping pokemon with its index
     std::map<std::string, unsigned> index_;
 

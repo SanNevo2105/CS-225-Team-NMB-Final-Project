@@ -18,6 +18,7 @@ TEST_CASE("Parsingdataset", "[parsing]") {
 
 }
 
+
 TEST_CASE("Floyd-warshall", "[fw]") {
     const double EPSILON = std::pow(2.22045, -16);
     std::string teamFile = "/workspaces/CS-225-Team-NMB-Final-Project/test-moveset.txt";
@@ -71,10 +72,6 @@ TEST_CASE("Floyd-warshall", "[fw]") {
         assert(tm->teammates_[4].find(i) == tm->teammates_[4].end());
         assert(std::abs(tm->weights_[i][4] - 0) < EPSILON);
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> fc4a8c2050b8d9864fb345a6ad04d27aa1c34a03
 }
 
 TEST_CASE("depthfirstsearch", "[dfs]") {

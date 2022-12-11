@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+../src/cs225/HSLAPixel.h
+iostream
+-
+sstream
+-
+
+../src/cs225/PNG.h
+string
+-
+HSLAPixel.h
+../src/cs225/HSLAPixel.h
+
+../src/graph.h
+string
+-
+vector
+-
+map
+-
+cs225/PNG.h
+../src/cs225/PNG.h
+
 ../src/teammaker.h
 string
 -
@@ -19,6 +41,8 @@ tuple
 /workspaces/CS-225-Team-NMB-Final-Project/entry/main.cpp
 teammaker.h
 /workspaces/CS-225-Team-NMB-Final-Project/entry/teammaker.h
+graph.h
+/workspaces/CS-225-Team-NMB-Final-Project/entry/graph.h
 iostream
 -
 
