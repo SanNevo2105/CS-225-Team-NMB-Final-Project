@@ -1,2 +1,2 @@
-/usr/bin/ar qc libsrc.a  CMakeFiles/src.dir/Image.cpp.o CMakeFiles/src.dir/graph.cpp.o CMakeFiles/src.dir/teammaker.cpp.o
+/usr/bin/ar qc libsrc.a  CMakeFiles/src.dir/cs225/HSLAPixel.cpp.o CMakeFiles/src.dir/cs225/PNG.cpp.o CMakeFiles/src.dir/cs225/textfile.cpp.o CMakeFiles/src.dir/graph.cpp.o CMakeFiles/src.dir/lodepng/lodepng.cpp.o CMakeFiles/src.dir/teammaker.cpp.o
 /usr/bin/ranlib libsrc.a

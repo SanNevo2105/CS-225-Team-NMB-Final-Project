@@ -203,7 +203,7 @@ std::vector<double> TeamMaker::usageParser(const std::string& fileName, unsigned
 TeamMaker::~TeamMaker(){}
 
 bool TeamMaker::dfs(unsigned start, unsigned key){
-    bool* traverse = new bool[index_.size()];
+    std::vector<bool> traverse(index_.size(), false);
     std::stack<unsigned> pkmnStack;
     pkmnStack.push(start);
     traverse[start] = true;
@@ -419,4 +419,22 @@ std::vector<unsigned> TeamMaker::pokemonsToVector(const std::string& str) {
         }
     }
     return teamVec;
+}
+
+std::map<std::string, std::vector<std::string>> TeamMaker::getAdjList(std::vector<std::string> team) {
+    std::set<unsigned> pkmnSet;
+    for (auto m:team) {
+        pkmnSet.insert(index_[m]);
+    }
+    std::map<std::string, std::vector<std::string>> adjList;
+    for (auto p:pkmnSet) {
+        std::vector<std::string> neighbours;
+        for (auto n:teammates_[p]) {
+            if (pkmnSet.find(n.first) != pkmnSet.end()) {
+                neighbours.push_back(mons_[n.first]);
+            }
+        }
+        adjList[mons_[p]] = neighbours;
+    }
+    return adjList;
 }

@@ -6,33 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/workspaces/CS-225-Team-NMB-Final-Project/cs225/HSLAPixel.h
+/workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.cpp
+teammaker.h
+/workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.h
+fstream
+-
+iterator
+-
+stdexcept
+-
 iostream
 -
-sstream
+stack
 -
-
-/workspaces/CS-225-Team-NMB-Final-Project/cs225/PNG.h
-string
+cassert
 -
-HSLAPixel.h
-/workspaces/CS-225-Team-NMB-Final-Project/cs225/HSLAPixel.h
-
-/workspaces/CS-225-Team-NMB-Final-Project/src/Image.cpp
-Image.h
-/workspaces/CS-225-Team-NMB-Final-Project/src/Image.h
-iostream
+cstring
 -
 algorithm
 -
-vector
+set
+-
+cmath
 -
 
-/workspaces/CS-225-Team-NMB-Final-Project/src/Image.h
+/workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.h
 string
 -
 vector
 -
-/workspaces/CS-225-Team-NMB-Final-Project/cs225/PNG.h
+map
+-
+tuple
 -
 

@@ -126,32 +126,86 @@ src/fast:
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
 .PHONY : src/fast
 
-Image.o: Image.cpp.o
+cs225/HSLAPixel.o: cs225/HSLAPixel.cpp.o
 
-.PHONY : Image.o
+.PHONY : cs225/HSLAPixel.o
 
 # target to build an object file
-Image.cpp.o:
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Image.cpp.o
-.PHONY : Image.cpp.o
+cs225/HSLAPixel.cpp.o:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/cs225/HSLAPixel.cpp.o
+.PHONY : cs225/HSLAPixel.cpp.o
 
-Image.i: Image.cpp.i
+cs225/HSLAPixel.i: cs225/HSLAPixel.cpp.i
 
-.PHONY : Image.i
+.PHONY : cs225/HSLAPixel.i
 
 # target to preprocess a source file
-Image.cpp.i:
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Image.cpp.i
-.PHONY : Image.cpp.i
+cs225/HSLAPixel.cpp.i:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/cs225/HSLAPixel.cpp.i
+.PHONY : cs225/HSLAPixel.cpp.i
 
-Image.s: Image.cpp.s
+cs225/HSLAPixel.s: cs225/HSLAPixel.cpp.s
 
-.PHONY : Image.s
+.PHONY : cs225/HSLAPixel.s
 
 # target to generate assembly for a file
-Image.cpp.s:
-	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/Image.cpp.s
-.PHONY : Image.cpp.s
+cs225/HSLAPixel.cpp.s:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/cs225/HSLAPixel.cpp.s
+.PHONY : cs225/HSLAPixel.cpp.s
+
+cs225/PNG.o: cs225/PNG.cpp.o
+
+.PHONY : cs225/PNG.o
+
+# target to build an object file
+cs225/PNG.cpp.o:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/cs225/PNG.cpp.o
+.PHONY : cs225/PNG.cpp.o
+
+cs225/PNG.i: cs225/PNG.cpp.i
+
+.PHONY : cs225/PNG.i
+
+# target to preprocess a source file
+cs225/PNG.cpp.i:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/cs225/PNG.cpp.i
+.PHONY : cs225/PNG.cpp.i
+
+cs225/PNG.s: cs225/PNG.cpp.s
+
+.PHONY : cs225/PNG.s
+
+# target to generate assembly for a file
+cs225/PNG.cpp.s:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/cs225/PNG.cpp.s
+.PHONY : cs225/PNG.cpp.s
+
+cs225/textfile.o: cs225/textfile.cpp.o
+
+.PHONY : cs225/textfile.o
+
+# target to build an object file
+cs225/textfile.cpp.o:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/cs225/textfile.cpp.o
+.PHONY : cs225/textfile.cpp.o
+
+cs225/textfile.i: cs225/textfile.cpp.i
+
+.PHONY : cs225/textfile.i
+
+# target to preprocess a source file
+cs225/textfile.cpp.i:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/cs225/textfile.cpp.i
+.PHONY : cs225/textfile.cpp.i
+
+cs225/textfile.s: cs225/textfile.cpp.s
+
+.PHONY : cs225/textfile.s
+
+# target to generate assembly for a file
+cs225/textfile.cpp.s:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/cs225/textfile.cpp.s
+.PHONY : cs225/textfile.cpp.s
 
 graph.o: graph.cpp.o
 
@@ -179,6 +233,33 @@ graph.s: graph.cpp.s
 graph.cpp.s:
 	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/graph.cpp.s
 .PHONY : graph.cpp.s
+
+lodepng/lodepng.o: lodepng/lodepng.cpp.o
+
+.PHONY : lodepng/lodepng.o
+
+# target to build an object file
+lodepng/lodepng.cpp.o:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/lodepng/lodepng.cpp.o
+.PHONY : lodepng/lodepng.cpp.o
+
+lodepng/lodepng.i: lodepng/lodepng.cpp.i
+
+.PHONY : lodepng/lodepng.i
+
+# target to preprocess a source file
+lodepng/lodepng.cpp.i:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/lodepng/lodepng.cpp.i
+.PHONY : lodepng/lodepng.cpp.i
+
+lodepng/lodepng.s: lodepng/lodepng.cpp.s
+
+.PHONY : lodepng/lodepng.s
+
+# target to generate assembly for a file
+lodepng/lodepng.cpp.s:
+	cd /workspaces/CS-225-Team-NMB-Final-Project/build && $(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/lodepng/lodepng.cpp.s
+.PHONY : lodepng/lodepng.cpp.s
 
 teammaker.o: teammaker.cpp.o
 
@@ -216,12 +297,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... src"
-	@echo "... Image.o"
-	@echo "... Image.i"
-	@echo "... Image.s"
+	@echo "... cs225/HSLAPixel.o"
+	@echo "... cs225/HSLAPixel.i"
+	@echo "... cs225/HSLAPixel.s"
+	@echo "... cs225/PNG.o"
+	@echo "... cs225/PNG.i"
+	@echo "... cs225/PNG.s"
+	@echo "... cs225/textfile.o"
+	@echo "... cs225/textfile.i"
+	@echo "... cs225/textfile.s"
 	@echo "... graph.o"
 	@echo "... graph.i"
 	@echo "... graph.s"
+	@echo "... lodepng/lodepng.o"
+	@echo "... lodepng/lodepng.i"
+	@echo "... lodepng/lodepng.s"
 	@echo "... teammaker.o"
 	@echo "... teammaker.i"
 	@echo "... teammaker.s"

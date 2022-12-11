@@ -4,8 +4,11 @@
 # src_sources at src/CMakeLists.txt:5 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/CS-225-Team-NMB-Final-Project/src/*.cpp")
 set(OLD_GLOB
-  "/workspaces/CS-225-Team-NMB-Final-Project/src/Image.cpp"
+  "/workspaces/CS-225-Team-NMB-Final-Project/src/cs225/HSLAPixel.cpp"
+  "/workspaces/CS-225-Team-NMB-Final-Project/src/cs225/PNG.cpp"
+  "/workspaces/CS-225-Team-NMB-Final-Project/src/cs225/textfile.cpp"
   "/workspaces/CS-225-Team-NMB-Final-Project/src/graph.cpp"
+  "/workspaces/CS-225-Team-NMB-Final-Project/src/lodepng/lodepng.cpp"
   "/workspaces/CS-225-Team-NMB-Final-Project/src/teammaker.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

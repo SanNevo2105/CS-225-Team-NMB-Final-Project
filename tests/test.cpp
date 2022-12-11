@@ -36,10 +36,10 @@ TEST_CASE("Floyd-warshall", "[fw]") {
     //Lando's entries
     assert(std::abs(tm->weights_[0][0]-1) < EPSILON);
     assert(std::abs(tm->weights_[0][1]-0.36741) < EPSILON);
-    assert(std::abs(tm->weights_[0][2]-0.40126) < EPSTLON);
+    assert(std::abs(tm->weights_[0][2]-0.40126) < EPSILON);
     std::cout << tm->weights_[0][3] << " compared to " << std::pow(0.14649 * 0.36741, 4) << std::endl;
-    assert(std::abs(unsigned(tm->weights_[0][3] * 1000000) - unsigned(std::pow(0.14649 * 0.36741, 4) * 1000000)) < EPSILON);
-    assert(std::abs(tm->weights_[0][4]-0) < EPSTLON);
+    assert(std::abs(tm->weights_[0][3] - std::pow(0.14649 * 0.36741, 4)) < EPSILON);
+    assert(std::abs(tm->weights_[0][4]-0) < EPSILON);
     /*
     //use 2.22045e-016
     //Dragapult's entries
@@ -87,11 +87,11 @@ TEST_CASE("depthfirstsearch", "[dfs]") {
     for(unsigned i=0; i < 4; i ++){
         for(unsigned j =0; j < 4; j ++ ){
             if(i != j){
-                assert(TeamMaker::dfs(i, j) == true);
+                REQUIRE(tm->dfs(i, j));
             }
         }
     }
     for(unsigned i=0; i < 4; i ++){
-        assert(TeamMaker::dfs(4, i) == false);
+        REQUIRE(tm->dfs(4, i) == false);
     }
 }
