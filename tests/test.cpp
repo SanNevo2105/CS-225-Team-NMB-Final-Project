@@ -9,8 +9,8 @@
 
 
 TEST_CASE("Parsingdataset", "[parsing]") {
-    std::string teamFile = "/workspaces/CS-225-Team-NMB-Final-Project/gen8ou-1825-moveset.txt";
-    std::string usageFile = "/workspaces/CS-225-Team-NMB-Final-Project/gen8ou-1825-usage.txt";
+    std::string teamFile = "../gen8ou-1825-moveset.txt";
+    std::string usageFile = "../gen8ou-1825-usage.txt";
     TeamMaker* tm = new TeamMaker(teamFile, usageFile); 
     std::cout<< "teammatesParser testing" << std::endl;
     
@@ -21,13 +21,13 @@ TEST_CASE("Parsingdataset", "[parsing]") {
 
 TEST_CASE("Floyd-warshall", "[fw]") {
     const double EPSILON = std::pow(2.22045, -16);
-    std::string teamFile = "/workspaces/CS-225-Team-NMB-Final-Project/test-moveset.txt";
-    std::string usageFile = "/workspaces/CS-225-Team-NMB-Final-Project/test-usage.txt";
+    std::string teamFile = "../test-moveset.txt";
+    std::string usageFile = "../test-usage.txt";
     TeamMaker* tm = new TeamMaker(teamFile, usageFile); 
-    std::cout<< "Floyd-warshall testing" << std::endl;
-    for (auto m: tm->mons_) {
-        std::cout << "_"<< m <<"_"<< std::endl;
-    }
+    // std::cout<< "Floyd-warshall testing" << std::endl;
+    // for (auto m: tm->mons_) {
+    //     std::cout << "_"<< m <<"_"<< std::endl;
+    // }
     assert(tm->mons_[0] == "landorus-therian");
     assert(tm->mons_[1] == "dragapult");
     assert(tm->mons_[2] == "heatran");
@@ -38,17 +38,17 @@ TEST_CASE("Floyd-warshall", "[fw]") {
     assert(std::abs(tm->weights_[0][0]-1) < EPSILON);
     assert(std::abs(tm->weights_[0][1]-0.36741) < EPSILON);
     assert(std::abs(tm->weights_[0][2]-0.40126) < EPSILON);
-    std::cout << tm->weights_[0][3] << " compared to " << std::pow(0.14649 * 0.36741, 4) << std::endl;
+    //std::cout << tm->weights_[0][3] << " compared to " << std::pow(0.14649 * 0.36741, 4) << std::endl;
     assert(std::abs(tm->weights_[0][3] - std::pow(0.14649 * 0.36741, 4)) < EPSILON);
     assert(std::abs(tm->weights_[0][4]-0) < EPSILON);
     
     //use 2.22045e-016
     //Dragapult's entries
-    std::cout << tm->weights_[1][0] << " compared to " << 0.57344 << std::endl;
+    //std::cout << tm->weights_[1][0] << " compared to " << 0.57344 << std::endl;
     assert(std::abs(tm->weights_[1][0] * 100000) - 57344 < EPSILON);
     assert(std::abs(tm->weights_[1][1] - 1) < EPSILON);
     assert(std::abs(tm->weights_[1][2] - 0.28261) < EPSILON);
-    std::cout << std::to_string(tm->weights_[1][3]) << " compared to " << "0.14649" << std::endl;
+    //std::cout << std::to_string(tm->weights_[1][3]) << " compared to " << "0.14649" << std::endl;
     assert(std::abs(tm->weights_[1][3] - 0.146490) < EPSILON);
     assert(std::abs(tm->weights_[1][4] - 0) < EPSILON);
 

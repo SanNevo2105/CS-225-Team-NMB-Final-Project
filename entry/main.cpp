@@ -3,8 +3,8 @@
 #include <iostream>
 
 int main(){
-    std::string teamFile = "/workspaces/CS-225-Team-NMB-Final-Project/gen8ou-1825-moveset.txt";
-    std::string usageFile = "/workspaces/CS-225-Team-NMB-Final-Project/gen8ou-1825-usage.txt";
+    std::string teamFile = "../gen8ou-1825-moveset.txt";
+    std::string usageFile = "../gen8ou-1825-usage.txt";
     TeamMaker* tm = new TeamMaker(teamFile, usageFile); 
     double length =150;
     double threshold = 0; 

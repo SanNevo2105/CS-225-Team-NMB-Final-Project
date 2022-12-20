@@ -4,9 +4,8 @@ cmake_minimum_required(VERSION 3.10)
 set(assignment_name "CS225-Team-NMB-Final-Project-main") # Name of the assignment
 set(assignment_version 1.2022.12.0) # Version, where minor=semester_year, patch=semester_end_month, tweak=revision
 set(assignment_entrypoints "main") # Entrypoints to run the program
-set(assignment_clean_rm "") # Generated files that should be removed with "make clean"
+set(assignment_clean_rm) # Generated files that should be removed with "make clean"
 set(assignment_container "fa22") # Container we are targetting
-
 
 # Add color support to our messages.
 # See: https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
@@ -68,9 +67,6 @@ if(NOT DEFINED EWS)
     set(CMAKE_C_COMPILER "/usr/bin/clang")
     set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
     set(CMAKE_LINKER "/usr/bin/clang++")
-
-    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
-    # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
 else()
     set(CMAKE_C_COMPILER "/software/llvm-6.0.1/bin/clang")
     set(CMAKE_CXX_COMPILER "/software/llvm-6.0.1/bin/clang++")
@@ -95,7 +91,7 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function")
 
 # Specify debug symbols and no optimizations for Debug builds.
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_GLIBCXX_DEBUG -O0 -g")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_GLIBCXX_DEBUG -O0 -gdwarf-4")
 
 # Specify additional clean files.
 set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${assignment_clean_rm}")
@@ -103,9 +99,9 @@ set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${assignment_clea
 # Add Catch2.
 # Note: Ubuntu 20.04 LTS does not have Catch2 on apt
 # See: https://github.com/catchorg/Catch2/issues/1383
-# if(NOT DEFINED EWS)
-#     find_package(Catch2 REQUIRED)
-# else()
+if(NOT DEFINED EWS)
+    find_package(Catch2 REQUIRED)
+else()
     include(FetchContent)
 
     FetchContent_Declare(
@@ -117,7 +113,7 @@ set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${assignment_clea
     FetchContent_MakeAvailable(Catch2)
 
     list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
-# endif()
+endif()
 
 # Path definitions.
 set(lib_dir ${CMAKE_SOURCE_DIR}/lib)

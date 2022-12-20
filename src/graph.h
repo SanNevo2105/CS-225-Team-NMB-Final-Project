@@ -4,7 +4,7 @@
 #include <set>
 #include <map>
 #include "StickerSheet.h"
-#include"/workspaces/CS-225-Team-NMB-Final-Project/lib/cs225/PNG.h"
+#include "cs225/PNG.h"
 
 class Graph {
   public: 
